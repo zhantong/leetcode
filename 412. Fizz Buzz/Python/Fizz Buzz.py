@@ -4,8 +4,8 @@ class Solution(object):
         :type n: int
         :rtype: List[str]
         """
-        result = [i for i in range(1, n + 1)]
-        for (index, item) in enumerate(result):
+        result = []
+        for item in range(1, n + 1):
             formatted = str(item)
             if item % 3 == 0 and item % 5 == 0:
                 formatted = 'FizzBuzz'
@@ -13,5 +13,5 @@ class Solution(object):
                 formatted = 'Fizz'
             elif item % 5 == 0:
                 formatted = 'Buzz'
-            result[index] = formatted
+            result.append(formatted)
         return result
