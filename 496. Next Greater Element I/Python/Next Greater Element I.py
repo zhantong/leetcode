@@ -5,13 +5,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
+        result = []
         if not findNums:
-            return []
+            return result
         num_max = max(nums)
         map = [-1] * (num_max + 1)
         for index, num in enumerate(nums):
             map[num] = index
-        result = []
         for find_num in findNums:
             if find_num >= num_max:
                 result.append(-1)
