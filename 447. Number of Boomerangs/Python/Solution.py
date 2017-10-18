@@ -8,7 +8,7 @@ class Solution(object):
         for point_a in points:
             distances = {}
             for point_b in points:
-                distance = (point_a[0] - point_b[0]) ** 2 + (point_a[1] - point_b[1]) ** 2
+                distance = (point_a[0] - point_b[0])**2 + (point_a[1] - point_b[1])**2
                 if distance not in distances:
                     distances[distance] = 0
                 distances[distance] += 1

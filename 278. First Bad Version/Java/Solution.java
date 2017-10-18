@@ -8,7 +8,7 @@ public class Solution extends VersionControl {
         while (low <= high) {
             long mid = (low + high) / 2;
             if (isBadVersion((int) mid)) {
-                high = (int) (mid - 1);
+                high = (int)(mid - 1);
             } else {
                 low = mid + 1;
             }

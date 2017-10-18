@@ -10,6 +10,6 @@ public:
         while (letters[i] == letters[25]) {
             i--;
         }
-        return max((int) tasks.size(), (letters[25] - 1) * (n + 1) + 25 - i);
+        return max((int)tasks.size(), (letters[25] - 1) * (n + 1) + 25 - i);
     }
 };

@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool wordPattern(string pattern, string str) {
-        vector <string> words;
+        vector<string> words;
         istringstream isstream(str);
         string item;
         while (isstream >> item) {

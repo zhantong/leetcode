@@ -5,24 +5,13 @@ class Solution(object):
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         left = 0
-        while left < len(nums) and nums[left] == 0:
-            left += 1
         right = len(nums) - 1
-        while right >= 0 and nums[right] == 2:
-            right -= 1
-        current = left
-        while current <= right and left <= right:
-            if nums[current] == 0:
-                if current == left:
-                    current += 1
-                else:
-                    nums[left], nums[current] = nums[current], nums[left]
-                left += 1
-            elif nums[current] == 2:
-                if current == right:
-                    current += 1
-                else:
-                    nums[right], nums[current] = nums[current], nums[right]
+        middle = 0
+        while middle <= right:
+            while nums[middle] == 2 and middle < right:
+                nums[middle], nums[right] = nums[right], nums[middle]
                 right -= 1
-            else:
-                current += 1
+            while nums[middle] == 0 and middle > left:
+                nums[middle], nums[left] = nums[left], nums[middle]
+                left += 1
+            middle += 1

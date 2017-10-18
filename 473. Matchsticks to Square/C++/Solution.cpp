@@ -24,7 +24,7 @@ public:
             return false;
         }
         int sumNums = 0;
-        for (const auto &num:nums) {
+        for (const auto &num : nums) {
             sumNums += num;
         }
         if (sumNums % 4 != 0) {

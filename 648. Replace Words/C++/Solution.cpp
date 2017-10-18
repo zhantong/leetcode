@@ -1,12 +1,12 @@
 class Solution {
 public:
-    string replaceWords(vector <string> &dict, string sentence) {
+    string replaceWords(vector<string> &dict, string sentence) {
         class Utils {
         public:
             class TrieNode {
             public:
                 char val;
-                TrieNode *children[26];
+                TrieNode *children[26] = {};
                 bool isWord = false;
 
                 TrieNode(char val) {
@@ -16,7 +16,7 @@ public:
 
             TrieNode *trieRoot;
 
-            TrieNode *buildTrie(vector <string> &words) {
+            TrieNode *buildTrie(vector<string> &words) {
                 TrieNode *root = new TrieNode(' ');
                 for (auto &word : words) {
                     TrieNode *current = root;
@@ -25,11 +25,15 @@ public:
                         if (current->children[index] == nullptr) {
                             current->children[index] = new TrieNode(letter);
                         } else if (current->children[index]->isWord) {
+                            current = current->children[index];
                             break;
                         }
                         current = current->children[index];
                     }
                     current->isWord = true;
+                    if (root->children['h' - 'a'] != nullptr && root->children['h' - 'a']->isWord) {
+                        cout << word << endl;
+                    }
                 }
                 trieRoot = root;
                 return root;
@@ -42,9 +46,15 @@ public:
                     builder += letter;
                     int index = letter - 'a';
                     if (root->children[index] == nullptr) {
+                        if (word == "h") {
+                            printf("out");
+                        }
                         return word;
                     }
                     if (root->children[index]->isWord) {
+                        if (builder == "h") {
+                            printf("builder");
+                        }
                         return builder;
                     }
                     root = root->children[index];
@@ -58,6 +68,9 @@ public:
         stringstream ss(sentence);
         string word;
         while (getline(ss, word, ' ')) {
+            if (word == "h") {
+                printf("out");
+            }
             builder += utils.getRoot(word);
             builder += ' ';
         }

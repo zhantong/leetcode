@@ -11,7 +11,7 @@ class Solution {
 public:
     int getMinimumDifference(TreeNode *root) {
         int result = INT_MAX;
-        stack < TreeNode * > sta;
+        stack<TreeNode *> sta;
         int prev = 0;
         bool hasPrev = false;
         while (root != nullptr || !sta.empty()) {

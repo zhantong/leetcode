@@ -1,9 +1,9 @@
 class Solution {
 public:
-    vector <string> findAllConcatenatedWordsInADict(vector <string> &words) {
-        vector <string> result;
-        unordered_set <string> wordsSet;
-        sort(words.begin(), words.end(), [](const string &a, const string &b) {
+    vector<string> findAllConcatenatedWordsInADict(vector<string> &words) {
+        vector<string> result;
+        unordered_set<string> wordsSet;
+        sort(words.begin(), words.end(), [](const string & a, const string & b) {
             return a.length() < b.length();
         });
 

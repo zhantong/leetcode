@@ -6,7 +6,7 @@ class Solution(object):
         """
         s = list(str(n))
         length = len(s)
-        i = length - 2
+        i = len(s) - 2
         while i >= 0:
             if s[i] < s[i + 1]:
                 break
@@ -17,11 +17,12 @@ class Solution(object):
         smallest = '9'
         smallest_index = -1
         while j < length:
-            if s[j] > s[i] and s[j] <= smallest:
+            if s[j] > s[i] and s[j] < smallest:
                 smallest = s[j]
                 smallest_index = j
             j += 1
         s[i], s[smallest_index] = s[smallest_index], s[i]
+        print(s)
         s[i + 1:] = sorted(s[i + 1:])
         n = int(''.join(s))
         if n > 0x7fffffff:

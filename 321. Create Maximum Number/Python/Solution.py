@@ -37,7 +37,8 @@ class Solution(object):
             return result
 
         def greater(nums_1, start_1, nums_2, start_2):
-            while start_1 < len(nums_1) and start_2 < len(nums_2) and nums_1[start_1] == nums_2[start_2]:
+            while start_1 < len(nums_1) and start_2 < len(
+                    nums_2) and nums_1[start_1] == nums_2[start_2]:
                 start_1 += 1
                 start_2 += 1
             if start_1 == len(nums_1) and start_2 == len(nums_2):

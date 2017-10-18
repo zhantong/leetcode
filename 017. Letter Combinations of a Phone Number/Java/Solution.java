@@ -5,7 +5,7 @@ public class Solution {
         }
         List<String> result = new ArrayList<>();
         result.add("");
-        String[] pattern = new String[]{"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        String[] pattern = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         for (char digit : digits.toCharArray()) {
             List<String> tempResult = new ArrayList<>();
             for (String item : result) {

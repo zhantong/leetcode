@@ -1,7 +1,7 @@
 class Solution {
 public:
     string convert(string s, int numRows) {
-        vector <string> rows(numRows, "");
+        vector<string> rows(numRows, "");
         int index = 0;
         while (index < s.length()) {
             for (int i = 0; i < numRows && index < s.length(); i++) {

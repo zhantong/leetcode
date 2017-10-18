@@ -19,4 +19,4 @@ class Solution:
                 dp[k][r][c] += dfs(N, k - 1, r + i, c + j, dp)
             return dp[k][r][c]
 
-        return dfs(N, K, r, c, [[[0] * N for _ in range(N)] for _ in range(K + 1)]) / 8 ** K
+        return dfs(N, K, r, c, [[[0] * N for _ in range(N)] for _ in range(K + 1)]) / 8**K

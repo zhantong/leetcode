@@ -4,6 +4,7 @@
 #         self.start = s
 #         self.end = e
 
+
 class SummaryRanges(object):
     def __init__(self):
         """
@@ -65,8 +66,7 @@ class SummaryRanges(object):
         return self.intervals
 
 
-
-        # Your SummaryRanges object will be instantiated and called as such:
-        # obj = SummaryRanges()
-        # obj.addNum(val)
-        # param_2 = obj.getIntervals()
+# Your SummaryRanges object will be instantiated and called as such:
+# obj = SummaryRanges()
+# obj.addNum(val)
+# param_2 = obj.getIntervals()

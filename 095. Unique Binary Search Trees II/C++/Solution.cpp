@@ -13,14 +13,14 @@ public:
         class Utils {
         public:
             vector<TreeNode *> generate(int start, int end) {
-                vector < TreeNode * > result;
+                vector<TreeNode *> result;
                 if (start > end) {
                     result.push_back(nullptr);
                     return result;
                 }
                 for (int i = start; i <= end; i++) {
-                    vector < TreeNode * > lefts = generate(start, i - 1);
-                    vector < TreeNode * > rights = generate(i + 1, end);
+                    vector<TreeNode *> lefts = generate(start, i - 1);
+                    vector<TreeNode *> rights = generate(i + 1, end);
                     for (TreeNode *left : lefts) {
                         for (TreeNode *right : rights) {
                             TreeNode *root = new TreeNode(i);

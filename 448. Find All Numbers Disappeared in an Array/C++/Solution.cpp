@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int> &nums) {
-        for (auto num:nums) {
+        for (auto num : nums) {
             int index = num > 0 ? num : -num;
             index--;
             if (nums[index] > 0) {

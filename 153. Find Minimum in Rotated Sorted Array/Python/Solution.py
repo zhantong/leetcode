@@ -4,13 +4,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        length = len(nums)
         low = 0
-        high = len(nums) - 1
+        high = length - 1
         while low < high:
-            if nums[low] < nums[high]:
-                return nums[low]
             mid = (low + high) // 2
-            if nums[mid] >= nums[low]:
+            if nums[mid] > nums[high]:
                 low = mid + 1
             else:
                 high = mid

@@ -1,40 +1,45 @@
-public class Solution {
+class Solution {
     public List<int[]> getSkyline(int[][] buildings) {
-        List<int[]> heights = new ArrayList<>();
-        List<int[]> result = new ArrayList<>();
-        for (int[] building : buildings) {
-            heights.add(new int[]{building[0], -building[2]});
-            heights.add(new int[]{building[1], building[2]});
-        }
-        Collections.sort(heights, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                if (o1[0] != o2[0]) {
-                    return o1[0] - o2[0];
+        class Utils {
+            LinkedList<int[]> merge(int[][] buildings, int low, int high) {
+                LinkedList<int[]> result = new LinkedList<>();
+                if (low == high) {
+                    result.add(new int[] {buildings[low][0], buildings[low][2]});
+                    result.add(new int[] {buildings[low][1], 0});
+                } else if (low < high) {
+                    int mid = (low + high) / 2;
+                    LinkedList<int[]> lefts = merge(buildings, low, mid);
+                    LinkedList<int[]> rights = merge(buildings, mid + 1, high);
+                    int heightLeft = 0;
+                    int heightRight = 0;
+                    while (!lefts.isEmpty() || !rights.isEmpty()) {
+                        long currentLeft = lefts.isEmpty() ? Long.MAX_VALUE : lefts.peekFirst()[0];
+                        long currentRight = rights.isEmpty() ? Long.MAX_VALUE : rights.peekFirst()[0];
+                        long current = 0;
+                        if (currentLeft < currentRight) {
+                            int[] temp = lefts.pollFirst();
+                            current = temp[0];
+                            heightLeft = temp[1];
+                        } else if (currentLeft > currentRight) {
+                            int[] temp = rights.pollFirst();
+                            current = temp[0];
+                            heightRight = temp[1];
+                        } else {
+                            int[] temp = lefts.pollFirst();
+                            current = temp[0];
+                            heightLeft = temp[1];
+                            heightRight = rights.pollFirst()[1];
+                        }
+                        int height = Math.max(heightLeft, heightRight);
+                        if (result.isEmpty() || result.peekLast()[1] != height) {
+                            result.add(new int[] {(int) current, height});
+                        }
+                    }
                 }
-                return o1[1] - o2[1];
-            }
-        });
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2 - o1;
-            }
-        });
-        priorityQueue.offer(0);
-        int prev = 0;
-        for (int[] height : heights) {
-            if (height[1] < 0) {
-                priorityQueue.offer(-height[1]);
-            } else {
-                priorityQueue.remove(height[1]);
-            }
-            int current = priorityQueue.peek();
-            if (current != prev) {
-                result.add(new int[]{height[0], current});
-                prev = current;
+                return result;
             }
         }
-        return result;
+        Utils utils = new Utils();
+        return utils.merge(buildings, 0, buildings.length - 1);
     }
 }

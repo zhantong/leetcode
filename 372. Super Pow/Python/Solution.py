@@ -8,7 +8,6 @@ class Solution(object):
 
         def pow(a, n, base):
             result = 1
-            a %= base
             for _ in range(n):
                 result = (result * a) % base
             return result

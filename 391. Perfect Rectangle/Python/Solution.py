@@ -28,8 +28,8 @@ class Solution(object):
                     else:
                         got.add(key)
         return len(got) == 4 \
-               and (str(x1) + ' ' + str(y1)) in got \
-               and (str(x1) + ' ' + str(y2)) in got \
-               and (str(x2) + ' ' + str(y1)) in got \
-               and (str(x2) + ' ' + str(y2)) in got \
-               and sum_up == (x2 - x1) * (y2 - y1)
+            and (str(x1) + ' ' + str(y1)) in got \
+            and (str(x1) + ' ' + str(y2)) in got \
+            and (str(x2) + ' ' + str(y1)) in got \
+            and (str(x2) + ' ' + str(y2)) in got \
+            and sum_up == (x2 - x1) * (y2 - y1)

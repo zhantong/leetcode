@@ -9,7 +9,7 @@
  */
 class Solution {
 public:
-    vector<int> findRightInterval(vector <Interval> &intervals) {
+    vector<int> findRightInterval(vector<Interval> &intervals) {
         vector<int> result(intervals.size());
         vector<int> starts(intervals.size());
         unordered_map<int, int> indexs;

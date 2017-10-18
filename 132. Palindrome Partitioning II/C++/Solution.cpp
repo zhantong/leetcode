@@ -3,7 +3,7 @@ public:
     int minCut(string s) {
         int length = s.length();
         vector<int> cuts(length, 0);
-        vector <vector<bool>> palindrome(length, vector<bool>(length, false));
+        vector<vector<bool>> palindrome(length, vector<bool>(length, false));
         for (int i = 0; i < length; i++) {
             int current = i;
             for (int j = 0; j <= i; j++) {

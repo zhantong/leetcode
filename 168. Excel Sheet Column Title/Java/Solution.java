@@ -3,7 +3,7 @@ public class Solution {
         StringBuilder builder = new StringBuilder();
         while (n != 0) {
             n--;
-            builder.insert(0, (char) ('A' + n % 26));
+            builder.insert(0, (char)('A' + n % 26));
             n /= 26;
         }
         return builder.toString();

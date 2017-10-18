@@ -44,7 +44,7 @@ public class Solution {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (pacific[i][j] && atlantic[i][j]) {
-                    result.add(new int[]{i, j});
+                    result.add(new int[] {i, j});
                 }
             }
         }

@@ -1,9 +1,9 @@
 class Solution {
 public:
-    bool exist(vector <vector<char>> &board, string word) {
+    bool exist(vector<vector<char>> &board, string word) {
         class Utils {
         public:
-            bool exist(vector <vector<char>> &board, string &word, int i, int j, int index) {
+            bool exist(vector<vector<char>> &board, string &word, int i, int j, int index) {
                 if (index == word.length()) {
                     return true;
                 }

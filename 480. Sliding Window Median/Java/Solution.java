@@ -1,61 +1,59 @@
-public class Solution {
+class Solution {
     public double[] medianSlidingWindow(int[] nums, int k) {
-        class Utils {
-            PriorityQueue<Long> minHeap;
-            PriorityQueue<Long> maxHeap;
-
-            public Utils() {
-                minHeap = new PriorityQueue<>();
-                maxHeap = new PriorityQueue<>();
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                if (o1[0] == o2[0]) {
+                    return Integer.compare(o1[1], o2[1]);
+                }
+                return Integer.compare(o1[0], o2[0]);
             }
-
-            double getMedian() {
-                if (maxHeap.isEmpty() && minHeap.isEmpty()) {
-                    return 0;
+        });
+        PriorityQueue<int[]> maxHeap = new PriorityQueue<>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                if (o1[0] == o2[0]) {
+                    return Integer.compare(o1[1], o2[1]);
                 }
-                if (maxHeap.size() == minHeap.size()) {
-                    return ((double) minHeap.peek() - maxHeap.peek()) / 2.0;
-                }
-                return (double) minHeap.peek();
+                return Integer.compare(o2[0], o1[0]);
             }
-
-            void add(int num) {
-                if (num < getMedian()) {
-                    maxHeap.add(-(long) num);
-                } else {
-                    minHeap.add((long) num);
+        });
+        List<Double> result = new ArrayList<>();
+        for (int i = 0; i < k; i++) {
+            maxHeap.add(new int[] {nums[i], i});
+        }
+        for (int i = 0; i < (k - k / 2); i++) {
+            minHeap.add(new int[] {maxHeap.peek()[0], maxHeap.peek()[1]});
+            maxHeap.poll();
+        }
+        for (int i = k; i < nums.length; i++) {
+            int num = nums[i];
+            result.add(k % 2 == 0 ? ((long) minHeap.peek()[0] + maxHeap.peek()[0]) / 2.0 : minHeap.peek()[0] / 1.0);
+            if (num >= minHeap.peek()[0]) {
+                minHeap.add(new int[] {num, i});
+                if (nums[i - k] <= minHeap.peek()[0]) {
+                    maxHeap.add(new int[] {minHeap.peek()[0], minHeap.peek()[1]});
+                    minHeap.poll();
                 }
-                if (maxHeap.size() > minHeap.size()) {
-                    minHeap.add(-maxHeap.poll());
-                } else if (minHeap.size() > maxHeap.size() + 1) {
-                    maxHeap.add(-minHeap.poll());
+            } else {
+                maxHeap.add(new int[] {num, i});
+                if (nums[i - k] >= minHeap.peek()[0]) {
+                    minHeap.add(new int[] {maxHeap.peek()[0], maxHeap.peek()[1]});
+                    maxHeap.poll();
                 }
             }
-
-            void remove(int num) {
-                if (num < getMedian()) {
-                    maxHeap.remove(-(long) num);
-                } else {
-                    minHeap.remove((long) num);
-                }
-                if (maxHeap.size() > minHeap.size()) {
-                    minHeap.add(-maxHeap.poll());
-                } else if (minHeap.size() > maxHeap.size() + 1) {
-                    maxHeap.add(-minHeap.poll());
-                }
+            while (!maxHeap.isEmpty() && maxHeap.peek()[1] <= i - k) {
+                maxHeap.poll();
+            }
+            while (!minHeap.isEmpty() && minHeap.peek()[1] <= i - k) {
+                minHeap.poll();
             }
         }
-        double[] result = new double[nums.length - k + 1];
-        Utils utils = new Utils();
-        for (int i = 0; i <= nums.length; i++) {
-            if (i >= k) {
-                result[i - k] = utils.getMedian();
-                utils.remove(nums[i - k]);
-            }
-            if (i < nums.length) {
-                utils.add(nums[i]);
-            }
+        result.add(k % 2 == 0 ? ((long) minHeap.peek()[0] + maxHeap.peek()[0]) / 2.0 : minHeap.peek()[0] / 1.0);
+        double[] res = new double[result.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = result.get(i);
         }
-        return result;
+        return res;
     }
 }

@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int kthSmallest(vector <vector<int>> &matrix, int k) {
+    int kthSmallest(vector<vector<int>> &matrix, int k) {
         class Item {
         public:
             int value;
@@ -13,7 +13,7 @@ public:
                 this->j = j;
             }
         };
-        auto compare = [](Item &a, Item &b) -> bool { return a.value > b.value; };
+        auto compare = [](Item & a, Item & b) -> bool { return a.value > b.value; };
         int m = matrix.size();
         int n = matrix[0].size();
         priority_queue<Item, vector<Item>, decltype(compare)> minHeap(compare);

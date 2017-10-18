@@ -19,6 +19,7 @@
 #         :rtype: int
 #         """
 
+
 class PeekingIterator(object):
     def __init__(self, iterator):
         """
@@ -51,8 +52,8 @@ class PeekingIterator(object):
         return self.current is not None
 
 
-        # Your PeekingIterator object will be instantiated and called as such:
-        # iter = PeekingIterator(Iterator(nums))
-        # while iter.hasNext():
-        #     val = iter.peek()   # Get the next element but not advance the iterator.
-        #     iter.next()         # Should return the same value as [val].
+# Your PeekingIterator object will be instantiated and called as such:
+# iter = PeekingIterator(Iterator(nums))
+# while iter.hasNext():
+#     val = iter.peek()   # Get the next element but not advance the iterator.
+#     iter.next()         # Should return the same value as [val].

@@ -10,7 +10,7 @@
 class Solution {
 public:
     bool isValidBST(TreeNode *root) {
-        stack < TreeNode * > sta;
+        stack<TreeNode *> sta;
         TreeNode *prev = nullptr;
         while (root != nullptr || !sta.empty()) {
             while (root != nullptr) {

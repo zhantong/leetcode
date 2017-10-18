@@ -9,7 +9,7 @@ public class Solution {
                 if (matrix.get(i).get(j) == 1) {
                     matrix.get(i).set(j, MAX_VALUE);
                 } else {
-                    queue.add(new int[]{i, j});
+                    queue.add(new int[] {i, j});
                 }
             }
         }
@@ -22,19 +22,19 @@ public class Solution {
                 int j = coord[1];
                 if (i > 0 && matrix.get(i - 1).get(j) == MAX_VALUE) {
                     matrix.get(i - 1).set(j, current);
-                    queue.add(new int[]{i - 1, j});
+                    queue.add(new int[] {i - 1, j});
                 }
                 if (i < m - 1 && matrix.get(i + 1).get(j) == MAX_VALUE) {
                     matrix.get(i + 1).set(j, current);
-                    queue.add(new int[]{i + 1, j});
+                    queue.add(new int[] {i + 1, j});
                 }
                 if (j > 0 && matrix.get(i).get(j - 1) == MAX_VALUE) {
                     matrix.get(i).set(j - 1, current);
-                    queue.add(new int[]{i, j - 1});
+                    queue.add(new int[] {i, j - 1});
                 }
                 if (j < n - 1 && matrix.get(i).get(j + 1) == MAX_VALUE) {
                     matrix.get(i).set(j + 1, current);
-                    queue.add(new int[]{i, j + 1});
+                    queue.add(new int[] {i, j + 1});
                 }
             }
             current++;

@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int maxEnvelopes(vector <pair<int, int>> &envelopes) {
+    int maxEnvelopes(vector<pair<int, int>> &envelopes) {
         sort(envelopes.begin(), envelopes.end(), [](const pair<int, int> &a, const pair<int, int> &b) {
             if (a.first != b.first) {
                 return a.first < b.first;

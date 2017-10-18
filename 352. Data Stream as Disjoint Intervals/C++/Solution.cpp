@@ -9,7 +9,7 @@
  */
 class SummaryRanges {
 public:
-    vector <Interval> intervals;
+    vector<Interval> intervals;
 
     /** Initialize your data structure here. */
     SummaryRanges() {
@@ -68,7 +68,7 @@ public:
         }
     }
 
-    vector <Interval> getIntervals() {
+    vector<Interval> getIntervals() {
         return intervals;
     }
 };

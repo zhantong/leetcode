@@ -13,7 +13,7 @@ public:
         if (root == nullptr) {
             return 0;
         }
-        queue < TreeNode * > que;
+        queue<TreeNode *> que;
         que.push(root);
         int depth = -1;
         while (!que.empty()) {

@@ -1,13 +1,13 @@
 class Solution {
 public:
-    vector<int> countSmaller(vector<int>& nums) {
+    vector<int> countSmaller(vector<int> &nums) {
         class Node {
         public:
             int value;
             int countLeft = 0;
             int countDuplicate = 1;
-            Node *left;
-            Node *right;
+            Node *left = nullptr;
+            Node *right = nullptr;
 
             Node(int value) {
                 this->value = value;

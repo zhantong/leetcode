@@ -33,7 +33,7 @@ public:
         Utils utils;
         utils.treeSum(root);
         vector<int> result;
-        for (auto &item:utils.map) {
+        for (auto &item : utils.map) {
             if (item.second == utils.maxFreq) {
                 result.push_back(item.first);
             }

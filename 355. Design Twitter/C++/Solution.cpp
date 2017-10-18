@@ -1,7 +1,6 @@
 class Twitter {
 public:
-    unordered_map<int, vector<pair < int, int>>>
-    tweets;
+    unordered_map<int, vector<pair<int, int>>> tweets;
     unordered_map<int, unordered_set<int>> follows;
     int time = 0;
 
@@ -20,7 +19,7 @@ public:
     /** Compose a new tweet. */
     void postTweet(int userId, int tweetId) {
         if (tweets.find(userId) == tweets.end()) {
-            tweets[userId] = vector < pair < int, int >> ();
+            tweets[userId] = vector<pair<int, int>>();
             follows[userId] = unordered_set<int>();
             follows[userId].insert(userId);
         }
@@ -34,10 +33,10 @@ public:
         if (tweets.find(userId) == tweets.end()) {
             return result;
         }
-        priority_queue < pair < int, int >, vector < pair < int, int >>, Order > heap;
-        for (auto &id:follows[userId]) {
+        priority_queue<pair<int, int>, vector<pair<int, int>>, Order> heap;
+        for (auto &id : follows[userId]) {
             if (tweets.find(id) != tweets.end()) {
-                for (auto &tweet:tweets[id]) {
+                for (auto &tweet : tweets[id]) {
                     heap.push(tweet);
                 }
             }
@@ -55,7 +54,7 @@ public:
             return;
         }
         if (follows.find(followerId) == follows.end()) {
-            tweets[followerId] = vector < pair < int, int >> ();
+            tweets[followerId] = vector<pair<int, int>>();
             follows[followerId] = unordered_set<int>();
             follows[followerId].insert(followerId);
         }

@@ -9,9 +9,9 @@
  */
 class Solution {
 public:
-    vector <vector<int>> levelOrderBottom(TreeNode *root) {
-        queue < TreeNode * > que;
-        vector <vector<int>> result;
+    vector<vector<int>> levelOrderBottom(TreeNode *root) {
+        queue<TreeNode *> que;
+        vector<vector<int>> result;
         que.push(root);
         while (!que.empty()) {
             vector<int> currentList;

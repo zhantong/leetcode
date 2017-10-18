@@ -4,6 +4,7 @@
 #         self.label = x
 #         self.neighbors = []
 
+
 class Solution:
     # @param node, a undirected graph node
     # @return a undirected graph node

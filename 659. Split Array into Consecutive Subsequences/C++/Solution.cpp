@@ -2,11 +2,11 @@ class Solution {
 public:
     bool isPossible(vector<int> &nums) {
         unordered_map<int, int> counts;
-        for (auto num:nums) {
+        for (auto num : nums) {
             counts[num]++;
         }
         unordered_map<int, int> needs;
-        for (auto num:nums) {
+        for (auto num : nums) {
             if (counts[num] == 0) {
                 continue;
             }

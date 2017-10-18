@@ -11,11 +11,11 @@ class Solution(object):
             board[i][j] = '1'
             if i > 1 and board[i - 1][j] == 'O':
                 dfs(board, i - 1, j)
-            if i < len(board) - 2 and board[i + 1][j] == 'O':
+            if i < len(board) - 1 and board[i + 1][j] == 'O':
                 dfs(board, i + 1, j)
             if j > 1 and board[i][j - 1] == 'O':
                 dfs(board, i, j - 1)
-            if j < len(board[0]) - 2 and board[i][j + 1] == 'O':
+            if j < len(board[0]) - 1 and board[i][j + 1] == 'O':
                 dfs(board, i, j + 1)
 
         if not board:

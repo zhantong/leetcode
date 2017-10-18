@@ -3,7 +3,7 @@ public:
     int findRotateSteps(string ring, string key) {
         int ringLength = ring.length();
         int keyLength = key.length();
-        vector <vector<int>> dp(keyLength + 1, vector<int>(ringLength, 0));
+        vector<vector<int>> dp(keyLength + 1, vector<int>(ringLength, 0));
         unordered_map<char, vector<int>> indexSame;
         for (auto item : key) {
             if (indexSame.find(item) == indexSame.end()) {

@@ -18,7 +18,7 @@ public class Solution {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < nums[i]; j++) {
-                builder.append((char) ('0' + i));
+                builder.append((char)('0' + i));
             }
         }
         return builder.toString();

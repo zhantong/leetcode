@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> exclusiveTime(int n, vector <string> &logs) {
+    vector<int> exclusiveTime(int n, vector<string> &logs) {
         stack<int> sta;
         vector<int> result(n, 0);
         int current = 0;

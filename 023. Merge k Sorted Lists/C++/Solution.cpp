@@ -8,7 +8,7 @@
  */
 class Solution {
 public:
-    ListNode* mergeKLists(vector<ListNode*>& lists) {
+    ListNode *mergeKLists(vector<ListNode *> &lists) {
         class Utils {
         public:
             ListNode *partition(vector<ListNode *> &lists, int start, int end) {

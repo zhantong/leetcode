@@ -4,9 +4,9 @@ class Solution:
         :type candies: List[int]
         :rtype: int
         """
-        nums = set(candies)
-        nums_num = len(nums)
+        show_once = set(candies)
+        show_once_num = len(show_once)
         target_num = len(candies) // 2
-        if nums_num >= target_num:
+        if show_once_num >= target_num:
             return target_num
-        return nums_num
+        return show_once_num

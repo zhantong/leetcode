@@ -7,7 +7,7 @@ public:
         sort(g.begin(), g.end(), greater<int>());
         sort(s.begin(), s.end(), greater<int>());
         int satisfyCount = 0;
-        for (int item:g) {
+        for (int item : g) {
             if (item <= s[satisfyCount]) {
                 satisfyCount++;
                 if (satisfyCount == s.size()) {

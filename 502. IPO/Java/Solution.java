@@ -8,7 +8,7 @@ public class Solution {
         });
         PriorityQueue<Integer> pqProfit = new PriorityQueue<>();
         for (int i = 0; i < Profits.length; i++) {
-            pqCapical.add(new int[]{Capital[i], Profits[i]});
+            pqCapical.add(new int[] {Capital[i], Profits[i]});
         }
         for (int i = 0; i < k; i++) {
             while (!pqCapical.isEmpty() && pqCapical.peek()[0] <= W) {

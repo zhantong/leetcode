@@ -4,11 +4,11 @@ public:
         class Utils {
         public:
             string convert(int num) {
-                vector <string> LESS_THAN_20{"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
-                                             "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
-                                             "Seventeen", "Eighteen", "Nineteen"};
-                vector <string> TENS{"", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty",
-                                     "Ninety"};
+                vector<string> LESS_THAN_20{"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+                                            "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+                                            "Seventeen", "Eighteen", "Nineteen"};
+                vector<string> TENS{"", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty",
+                                    "Ninety"};
                 if (num == 0) {
                     return "";
                 }
@@ -21,7 +21,7 @@ public:
                 return LESS_THAN_20[num / 100] + " Hundred " + convert(num % 100);
             }
         };
-        vector <string> THOUSANDS{"", "Thousand", "Million", "Billion"};
+        vector<string> THOUSANDS{"", "Thousand", "Million", "Billion"};
         if (num == 0) {
             return "Zero";
         }

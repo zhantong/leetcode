@@ -14,7 +14,6 @@ public:
             this->times = times;
         }
     };
-
     int initCapacity;
     int capacity;
     unordered_map<int, Node *> memoryNodes;

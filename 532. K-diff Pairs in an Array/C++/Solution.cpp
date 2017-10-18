@@ -1,4 +1,3 @@
-
 class Solution {
 public:
     int findPairs(vector<int> &nums, int k) {
@@ -10,7 +9,7 @@ public:
             counts[num]++;
         }
         int result = 0;
-        for (auto &item:counts) {
+        for (auto &item : counts) {
             if (k == 0) {
                 if (item.second >= 2) {
                     result++;

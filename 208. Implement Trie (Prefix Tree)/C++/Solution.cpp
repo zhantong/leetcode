@@ -20,7 +20,7 @@ public:
     /** Inserts a word into the trie. */
     void insert(string word) {
         TrieNode *current = root;
-        for (auto letter:word) {
+        for (auto letter : word) {
             if (current->children[letter - 'a'] == nullptr) {
                 current->children[letter - 'a'] = new TrieNode();
                 current->children[letter - 'a']->val = letter;
@@ -33,7 +33,7 @@ public:
     /** Returns if the word is in the trie. */
     bool search(string word) {
         TrieNode *current = root;
-        for (auto letter:word) {
+        for (auto letter : word) {
             if (current->children[letter - 'a'] == nullptr) {
                 return false;
             }
@@ -45,7 +45,7 @@ public:
     /** Returns if there is any word in the trie that starts with the given prefix. */
     bool startsWith(string prefix) {
         TrieNode *current = root;
-        for (auto letter:prefix) {
+        for (auto letter : prefix) {
             if (current->children[letter - 'a'] == nullptr) {
                 return false;
             }

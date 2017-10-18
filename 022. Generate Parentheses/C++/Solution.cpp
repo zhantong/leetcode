@@ -1,9 +1,9 @@
 class Solution {
 public:
-    vector <string> generateParenthesis(int n) {
+    vector<string> generateParenthesis(int n) {
         class Utils {
         public:
-            void parenthesis(vector <string> &result, string current, int left, int right) {
+            void parenthesis(vector<string> &result, string current, int left, int right) {
                 if (left == 0 && right == 0) {
                     result.push_back(current);
                 } else if (left >= 0 && right >= left) {
@@ -12,7 +12,7 @@ public:
                 }
             }
         };
-        vector <string> result;
+        vector<string> result;
         Utils utils;
         utils.parenthesis(result, "", n, n);
         return result;

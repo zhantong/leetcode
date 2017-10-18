@@ -41,38 +41,37 @@
 #        :rtype List[NestedInteger]
 #        """
 
+
 class Solution(object):
     def deserialize(self, s):
         """
         :type s: str
         :rtype: NestedInteger
         """
-        if not s:
-            return None
-        if s[0] != '[':
-            return NestedInteger(int(s))
-        prev_index = 0
-        index = 0
         stack = []
-        current = None
-        while index < len(s):
-            if s[index] == '[':
-                if current:
-                    stack.append(current)
+        current = NestedInteger()
+        i = 0
+        length = len(s)
+        while i < length:
+            if s[i] == '[':
+                stack.append(current)
                 current = NestedInteger()
-                prev_index = index + 1
-            if s[index] == ',':
-                if s[index - 1] != ']':
-                    item = int(s[prev_index:index])
-                    current.add(NestedInteger(item))
-                prev_index = index + 1
-            if s[index] == ']':
-                if s[index - 1] != ']' and s[index - 1] != '[':
-                    item = int(s[prev_index:index])
-                    current.add(NestedInteger(item))
-                if stack:
-                    outer = stack.pop()
-                    outer.add(current)
-                    current = outer
-            index += 1
-        return current
+                i += 1
+            elif s[i] in '-0123456789':
+                sign = 1
+                if s[i] == '-':
+                    sign = -1
+                    i += 1
+                num = 0
+                while i < length and s[i] not in ',]':
+                    num = num * 10 + ord(s[i]) - ord('0')
+                    i += 1
+                num = NestedInteger(num * sign)
+                current.add(num)
+            elif s[i] == ',':
+                i += 1
+            elif s[i] == ']':
+                stack[-1].add(current)
+                current = stack.pop()
+                i += 1
+        return current.getList()[0]

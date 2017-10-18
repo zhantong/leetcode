@@ -11,7 +11,7 @@ class Solution(object):
         m -= 1
         n -= 1
         while n >= 0:
-            if m >= 0 and nums1[m] > nums2[n]:
+            if nums1[m] > nums2[n] and m >= 0:
                 nums1[index] = nums1[m]
                 m -= 1
             else:

@@ -13,7 +13,7 @@ public:
     // Encodes a tree to a single string.
     string serialize(TreeNode *root) {
         string result;
-        stack < TreeNode * > sta;
+        stack<TreeNode *> sta;
         while (root != nullptr || !sta.empty()) {
             if (root != nullptr) {
                 result += to_string(root->val) + " ";

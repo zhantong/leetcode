@@ -18,7 +18,9 @@ class Solution:
                 if num + 1 not in needs:
                     needs[num + 1] = 0
                 needs[num + 1] += 1
-            elif num + 1 in counts and counts[num + 1] > 0 and num + 2 in counts and counts[num + 2] > 0:
+            elif num + 1 in counts and counts[num
+                                              + 1] > 0 and num + 2 in counts and counts[num
+                                                                                        + 2] > 0:
                 counts[num + 1] -= 1
                 counts[num + 2] -= 1
                 if num + 3 not in needs:

@@ -5,28 +5,24 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
+        if not nums:
+            return False
         low = 0
         high = len(nums) - 1
-        while low <= high:
-            while low < high and nums[low] == nums[high]:
-                low += 1
+        while low < high:
             mid = (low + high) // 2
             if nums[mid] == target:
                 return True
-            if nums[mid] >= nums[low]:
-                if nums[mid] < target:
+            if nums[mid] > nums[high]:
+                if nums[low] <= target < nums[mid]:
+                    high = mid
+                else:
+                    low = mid + 1
+            elif nums[mid] < nums[high]:
+                if nums[mid] < target <= nums[high]:
                     low = mid + 1
                 else:
-                    if nums[low] > target:
-                        low = mid + 1
-                    else:
-                        high = mid - 1
+                    high = mid
             else:
-                if nums[mid] > target:
-                    high = mid - 1
-                else:
-                    if nums[high] < target:
-                        high = mid - 1
-                    else:
-                        low = mid + 1
-        return False
+                high -= 1
+        return nums[low] == target

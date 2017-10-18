@@ -1,7 +1,6 @@
 class Solution {
 public:
     int index = 0;
-
     string decodeString(string s) {
         string result = "";
         while (index < s.length() && s[index] != ']') {

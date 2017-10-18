@@ -4,25 +4,26 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution(object):
     def detectCycle(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-        if not head:
+        if head is None or head.next is None:
             return None
-        slow = head
-        fast = head
-        visited = set()
-        while fast.next and fast.next.next:
-            slow = slow.next
-            fast = fast.next.next
-            if slow == fast:
-                while slow not in visited:
-                    visited.add(slow)
-                    slow = slow.next
-                while head not in visited:
-                    head = head.next
-                return head
-        return None
+        walker = head
+        runner = head
+        while runner and runner.next:
+            walker = walker.next
+            runner = runner.next.next
+            if walker == runner:
+                break
+        if runner is None or runner.next is None:
+            return None
+        walker = head
+        while walker != runner:
+            walker = walker.next
+            runner = runner.next
+        return walker

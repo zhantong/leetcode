@@ -5,15 +5,14 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def diameterOfBinaryTree(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
-        if not root:
-            return 0
-        self.result = 0
+        self.result = -1
 
         def diameter(root):
             if not root:
@@ -25,4 +24,5 @@ class Solution(object):
             return max(left, right) + 1
 
         diameter(root)
-        return self.result - 1
+
+        return 0 if self.result == -1 else self.result - 1

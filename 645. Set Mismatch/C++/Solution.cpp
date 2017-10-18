@@ -15,6 +15,6 @@ public:
                 miss = i + 1;
             }
         }
-        return vector < int > {duplicate, miss};
+        return vector<int> {duplicate, miss};
     }
 };

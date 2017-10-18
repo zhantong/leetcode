@@ -21,6 +21,7 @@ class Solution(object):
         for i in range(1, m):
             for j in range(1, n):
                 if matrix[i][j] == '1':
-                    memory[i][j] = min(memory[i - 1][j], memory[i - 1][j - 1], memory[i][j - 1]) + 1
+                    memory[i][j] = min(memory[i - 1][j], memory[i - 1][j - 1], memory[i][j
+                                                                                         - 1]) + 1
                     result = max(result, memory[i][j])
         return result * result

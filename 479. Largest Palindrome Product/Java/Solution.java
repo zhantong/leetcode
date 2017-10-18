@@ -8,7 +8,7 @@ class Solution {
             long current = Long.parseLong(String.valueOf(i) + new StringBuilder().append(i).reverse().toString());
             for (long item = max; item * item >= current; item--) {
                 if (current % item == 0) {
-                    return (int) (current % 1337);
+                    return (int)(current % 1337);
                 }
             }
         }

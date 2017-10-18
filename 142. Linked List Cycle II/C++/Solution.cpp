@@ -14,7 +14,7 @@ public:
         }
         ListNode *slow = head;
         ListNode *fast = head;
-        unordered_set < ListNode * > visited;
+        unordered_set<ListNode *> visited;
         while (fast->next != nullptr && fast->next->next != nullptr) {
             slow = slow->next;
             fast = fast->next->next;

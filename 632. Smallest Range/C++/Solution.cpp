@@ -1,12 +1,12 @@
 class Solution {
 public:
-    vector<int> smallestRange(vector <vector<int>> &nums) {
+    vector<int> smallestRange(vector<vector<int>> &nums) {
         struct comp {
-            bool operator()(int p1[], int p2[]) {
-                return p1[0] < p2[0];
+            bool operator()(vector<int> p1, vector<int> p2) {
+                return p2[0] < p1[0];
             }
         };
-        priority_queue<int[], vector<int[]>, comp> heap;
+        priority_queue<vector<int>, vector<vector<int>>, comp> heap;
         int end = INT_MIN;
         for (int i = 0; i < nums.size(); i++) {
             int num = nums[i][0];
@@ -16,7 +16,7 @@ public:
         int start = heap.top()[0];
         int tempEnd = end;
         while (heap.size() == nums.size()) {
-            const int *current = heap.top();
+            vector<int> current = heap.top();
             heap.pop();
             if (current[2] + 1 < nums[current[1]].size()) {
                 tempEnd = max(tempEnd, nums[current[1]][current[2] + 1]);

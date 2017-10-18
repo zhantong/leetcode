@@ -14,7 +14,7 @@ public:
         if (root == nullptr) {
             return result;
         }
-        queue < TreeNode * > que;
+        queue<TreeNode *> que;
         que.push(root);
         while (!que.empty()) {
             int size = que.size();

@@ -14,4 +14,4 @@ public class Solution {
             commonIndex++;
         }
     }
-}s
+}

@@ -18,7 +18,7 @@ public class Solution {
                 }
             }
             if (count != 0) {
-                board[i][j] = (char) (count + '0');
+                board[i][j] = (char)(count + '0');
             } else {
                 board[i][j] = 'B';
                 for (int a = -1; a <= 1; a++) {
@@ -26,7 +26,7 @@ public class Solution {
                         int p = i + a;
                         int q = j + b;
                         if (p >= 0 && q >= 0 && p < m && q < n && board[p][q] == 'E') {
-                            updateBoard(board, new int[]{p, q});
+                            updateBoard(board, new int[] {p, q});
                         }
                     }
                 }

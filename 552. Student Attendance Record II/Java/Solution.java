@@ -19,6 +19,6 @@ public class Solution {
             result += (counts[i - 1] * counts[n - i]) % MOD;
             result %= MOD;
         }
-        return (int) result;
+        return (int)result;
     }
 }

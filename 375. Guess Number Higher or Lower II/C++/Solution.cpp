@@ -3,7 +3,7 @@ public:
     int getMoneyAmount(int n) {
         class Utils {
         public:
-            int getMoney(int start, int end, vector <vector<int>> &memory) {
+            int getMoney(int start, int end, vector<vector<int>> &memory) {
                 if (start >= end) {
                     return 0;
                 }
@@ -19,7 +19,7 @@ public:
                 return result;
             }
         };
-        vector <vector<int>> memory(n + 1, vector<int>(n + 1, 0));
+        vector<vector<int>> memory(n + 1, vector<int>(n + 1, 0));
         Utils utils;
         return utils.getMoney(1, n, memory);
     }

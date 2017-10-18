@@ -1,8 +1,8 @@
 class Solution {
 public:
-    vector <string> findRestaurant(vector <string> &list1, vector <string> &list2) {
+    vector<string> findRestaurant(vector<string> &list1, vector<string> &list2) {
         int minIndexSum = INT_MAX;
-        vector <string> result;
+        vector<string> result;
         unordered_map<string, int> list1Map;
         for (int i = 0; i < list1.size(); i++) {
             list1Map.insert(pair<string, int>(list1[i], i));

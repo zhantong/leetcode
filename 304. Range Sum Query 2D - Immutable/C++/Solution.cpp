@@ -1,14 +1,14 @@
 class NumMatrix {
 public:
-    vector <vector<int>> sums;
+    vector<vector<int>> sums;
 
-    NumMatrix(vector <vector<int>> matrix) {
+    NumMatrix(vector<vector<int>> matrix) {
         if (matrix.size() == 0) {
             return;
         }
         int m = matrix.size();
         int n = matrix[0].size();
-        sums = vector < vector < int >> (m + 1, vector<int>(n + 1, 0));
+        sums = vector<vector<int>>(m + 1, vector<int>(n + 1, 0));
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
                 sums[i][j] = matrix[i - 1][j - 1] + sums[i][j - 1] + sums[i - 1][j] - sums[i - 1][j - 1];

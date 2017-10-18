@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int evalRPN(vector <string> &tokens) {
+    int evalRPN(vector<string> &tokens) {
         stack<int> sta;
         for (string &token : tokens) {
             if (token == "+") {

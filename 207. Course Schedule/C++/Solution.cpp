@@ -1,7 +1,7 @@
 class Solution {
 public:
-    bool canFinish(int numCourses, vector <pair<int, int>> &prerequisites) {
-        vector <unordered_set<int>> graph(numCourses);
+    bool canFinish(int numCourses, vector<pair<int, int>> &prerequisites) {
+        vector<unordered_set<int>> graph(numCourses);
         vector<int> inDegrees(numCourses);
         for (const auto &prerequisite : prerequisites) {
             int before = prerequisite.second;

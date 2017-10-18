@@ -6,6 +6,6 @@ public:
             x++;
         }
         int y = area / x;
-        return vector < int > {x, y};
+        return vector<int> {x, y};
     }
 };

@@ -2,7 +2,7 @@ class Solution {
 public:
     string originalDigits(string s) {
         vector<int> letters('z' + 1);
-        for (auto letter:s) {
+        for (auto letter : s) {
             letters[letter]++;
         }
         vector<int> nums(10);
@@ -19,7 +19,7 @@ public:
         string result = "";
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < nums[i]; j++) {
-                result += (char) ('0' + i);
+                result += (char)('0' + i);
             }
         }
         return result;

@@ -1,11 +1,9 @@
-
 class Solution {
 public:
-    vector <string> findItinerary(vector <pair<string, string>> tickets) {
+    vector<string> findItinerary(vector<pair<string, string>> tickets) {
         class Utils {
         public:
-            bool
-            dfs(unordered_map <string, vector<string>> &travels, vector <string> &result, string start, int length) {
+            bool dfs(unordered_map<string, vector<string>> &travels, vector<string> &result, string start, int length) {
                 result.push_back(start);
                 if (travels.find(start) == travels.end() || travels[start].empty()) {
                     if (result.size() == length) {
@@ -26,15 +24,15 @@ public:
                 return false;
             }
         };
-        unordered_map <string, vector<string>> travels;
-        for (const auto &ticket : tickets) {
+        unordered_map<string, vector<string>> travels;
+        for (auto &ticket : tickets) {
             travels[ticket.first].push_back(ticket.second);
         }
-        for (const auto &item : travels) {
+        for (auto &item : travels) {
             sort(item.second.begin(), item.second.end());
         }
         string start = "JFK";
-        vector <string> result;
+        vector<string> result;
         Utils utils;
         utils.dfs(travels, result, start, tickets.size() + 1);
         return result;

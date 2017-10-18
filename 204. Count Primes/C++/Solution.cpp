@@ -15,7 +15,7 @@ public:
             }
         }
         int count = 0;
-        for (bool prime:primes) {
+        for (bool prime : primes) {
             if (prime) {
                 count++;
             }

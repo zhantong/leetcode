@@ -4,17 +4,16 @@ public:
         class Utils {
         public:
             int steps[8][2] = {{1,  2},
-                               {1,  -2},
-                               {-1, 2},
-                               {-1, -2},
-                               {2,  -1},
-                               {2,  1},
-                               {-2, -1},
-                               {-2, 1}};
+                {1,  -2},
+                {-1, 2},
+                {-1, -2},
+                {2,  -1},
+                {2,  1},
+                {-2, -1},
+                {-2, 1}
+            };
 
-            double dfs(int N, int k, int r, int c, vector <vector<vector < double>>
-
-            > &dp) {
+            double dfs(int N, int k, int r, int c, vector<vector<vector<double>>> &dp) {
                 if (r < 0 || r >= N || c < 0 || c >= N) {
                     return 0;
                 }
@@ -31,7 +30,7 @@ public:
             }
         };
         Utils utils;
-        vector < vector < vector < double >> > dp(K + 1, vector < vector < double >> (N, vector<double>(N)));
+        vector<vector<vector<double>>> dp(K + 1, vector<vector<double>>(N, vector<double>(N)));
         return utils.dfs(N, K, r, c, dp) / pow(8, K);
     }
 };

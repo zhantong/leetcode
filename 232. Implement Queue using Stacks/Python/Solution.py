@@ -46,10 +46,9 @@ class MyQueue(object):
         return not self.stack_a and not self.stack_b
 
 
-
-        # Your MyQueue object will be instantiated and called as such:
-        # obj = MyQueue()
-        # obj.push(x)
-        # param_2 = obj.pop()
-        # param_3 = obj.peek()
-        # param_4 = obj.empty()
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.peek()
+# param_4 = obj.empty()

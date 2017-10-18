@@ -33,7 +33,7 @@ public class Solution {
         for (int i = 0; i < numCourses; i++) {
             if (!visited[i]) {
                 if (!utils.dfs(graph, i, order, visiting, visited)) {
-                    return new int[]{};
+                    return new int[] {};
                 }
             }
         }

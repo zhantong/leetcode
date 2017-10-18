@@ -18,15 +18,15 @@ public:
             }
         };
         if (nums.size() == 0) {
-            return vector < int > {-1, -1};
+            return vector<int> {-1, -1};
         }
         Utils utils;
         int low = utils.search(nums, target);
         int high = utils.search(nums, target + 1);
         high--;
         if (low < nums.size() && nums[low] == target) {
-            return vector < int > {low, high};
+            return vector<int> {low, high};
         }
-        return vector < int > {-1, -1};
+        return vector<int> {-1, -1};
     }
 };

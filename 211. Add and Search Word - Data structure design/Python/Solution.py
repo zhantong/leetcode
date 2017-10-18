@@ -47,8 +47,7 @@ class WordDictionary(object):
         return search(word, 0, self.root)
 
 
-
-        # Your WordDictionary object will be instantiated and called as such:
-        # obj = WordDictionary()
-        # obj.addWord(word)
-        # param_2 = obj.search(word)
+# Your WordDictionary object will be instantiated and called as such:
+# obj = WordDictionary()
+# obj.addWord(word)
+# param_2 = obj.search(word)

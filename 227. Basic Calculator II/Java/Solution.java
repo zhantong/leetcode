@@ -14,20 +14,20 @@ public class Solution {
                 i++;
             }
             switch (preOperator) {
-                case '+':
-                    result += preNumber;
-                    preNumber = current;
-                    break;
-                case '-':
-                    result += preNumber;
-                    preNumber = -current;
-                    break;
-                case '*':
-                    preNumber *= current;
-                    break;
-                case '/':
-                    preNumber /= current;
-                    break;
+            case '+':
+                result += preNumber;
+                preNumber = current;
+                break;
+            case '-':
+                result += preNumber;
+                preNumber = -current;
+                break;
+            case '*':
+                preNumber *= current;
+                break;
+            case '/':
+                preNumber /= current;
+                break;
             }
             while (i < s.length() && s.charAt(i) == ' ') {
                 i++;

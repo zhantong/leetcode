@@ -5,6 +5,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Codec:
     def serialize(self, root):
         """Encodes a tree to a single string.
@@ -46,6 +47,6 @@ class Codec:
         return construct(data, 0, len(data))
 
 
-        # Your Codec object will be instantiated and called as such:
-        # codec = Codec()
-        # codec.deserialize(codec.serialize(root))
+# Your Codec object will be instantiated and called as such:
+# codec = Codec()
+# codec.deserialize(codec.serialize(root))

@@ -5,26 +5,25 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
+        length = len(nums)
         low = 0
-        high = len(nums) - 1
+        high = length - 1
+        while low < high:
+            mid = (low + high) // 2
+            if nums[mid] > nums[high]:
+                low = mid + 1
+            else:
+                high = mid
+        rotate = low
+        low = 0
+        high = length - 1
         while low <= high:
             mid = (low + high) // 2
-            if nums[mid] == target:
-                return mid
-            if nums[mid] >= nums[low]:
-                if nums[mid] < target:
-                    low = mid + 1
-                else:
-                    if nums[low] > target:
-                        low = mid + 1
-                    else:
-                        high = mid - 1
+            real_mid = (mid + rotate) % length
+            if nums[real_mid] == target:
+                return real_mid
+            if nums[real_mid] < target:
+                low = mid + 1
             else:
-                if nums[mid] > target:
-                    high = mid - 1
-                else:
-                    if nums[high] < target:
-                        high = mid - 1
-                    else:
-                        low = mid + 1
+                high = mid - 1
         return -1

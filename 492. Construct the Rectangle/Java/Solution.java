@@ -5,6 +5,6 @@ public class Solution {
             x++;
         }
         int y = area / x;
-        return new int[]{x, y};
+        return new int[] {x, y};
     }
 }

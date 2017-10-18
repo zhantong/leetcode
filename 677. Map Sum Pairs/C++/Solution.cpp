@@ -22,7 +22,7 @@ public:
         }
         TrieNode *root = this->root;
         root->count += val;
-        for (auto letter:key) {
+        for (auto letter : key) {
             if (root->children.count(letter) == 0) {
                 root->children[letter] = new TrieNode();
             }
@@ -33,7 +33,7 @@ public:
 
     int sum(string prefix) {
         TrieNode *root = this->root;
-        for (auto letter:prefix) {
+        for (auto letter : prefix) {
             if (root->children.count(letter) == 0) {
                 return 0;
             }

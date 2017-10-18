@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector <string> findWords(vector <vector<char>> &board, vector <string> &words) {
+    vector<string> findWords(vector<vector<char>> &board, vector<string> &words) {
         class Utils {
         public:
             class TrieNode {
@@ -14,7 +14,7 @@ public:
                 }
             };
 
-            TrieNode *buildTrie(vector <string> &words) {
+            TrieNode *buildTrie(vector<string> &words) {
                 TrieNode *root = new TrieNode();
                 for (auto &word : words) {
                     TrieNode *node = root;
@@ -32,8 +32,7 @@ public:
             }
 
             void
-            backTrace(vector <vector<char>> &board, int i, int j, int m, int n, TrieNode *node,
-                      vector <string> &result) {
+            backTrace(vector<vector<char>> &board, int i, int j, int m, int n, TrieNode *node, vector<string> &result) {
                 if (i < 0 || i >= m || j < 0 || j >= n || board[i][j] == '#' ||
                     node->next[board[i][j] - 'a'] == nullptr) {
                     return;
@@ -52,8 +51,8 @@ public:
                 board[i][j] = letter;
             }
 
-            vector <string> go(vector <vector<char>> &board, vector <string> &words) {
-                vector <string> result;
+            vector<string> go(vector<vector<char>> &board, vector<string> &words) {
+                vector<string> result;
                 TrieNode *root = buildTrie(words);
                 int m = board.size();
                 int n = board[0].size();

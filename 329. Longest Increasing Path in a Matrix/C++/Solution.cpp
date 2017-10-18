@@ -1,9 +1,9 @@
 class Solution {
 public:
-    int longestIncreasingPath(vector <vector<int>> &matrix) {
+    int longestIncreasingPath(vector<vector<int>> &matrix) {
         class Utils {
         public:
-            int dfs(vector <vector<int>> &matrix, int i, int j, int m, int n, int prev, vector <vector<int>> &memory) {
+            int dfs(vector<vector<int>> &matrix, int i, int j, int m, int n, int prev, vector<vector<int>> &memory) {
                 if (i < 0 || i >= m || j < 0 || j >= n || matrix[i][j] >= prev) {
                     return 0;
                 }
@@ -26,7 +26,7 @@ public:
         }
         int m = matrix.size();
         int n = matrix[0].size();
-        vector <vector<int>> memory(m, vector<int>(n, 0));
+        vector<vector<int>> memory(m, vector<int>(n, 0));
         int result = 0;
         Utils utils;
         for (int i = 0; i < m; i++) {

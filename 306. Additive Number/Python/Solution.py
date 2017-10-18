@@ -5,27 +5,22 @@ class Solution(object):
         :rtype: bool
         """
 
-        def is_additive(second, third, num):
-            if num[second] == '0' and third - second > 1:
-                return False
-            first = 0
-            while third < len(num):
-                a = int(num[first:second])
-                b = int(num[second:third])
-                the_sum = a + b
-                the_sum = str(the_sum)
-                if not num[third:].startswith(the_sum):
-                    return False
-                first = second
-                second = third
-                third += len(the_sum)
-            return True
+        def is_valid(num, a, b, start):
+            if start == len(num):
+                return True
+            a, b = b, a + b
+            return num.startswith(str(b), start) and is_valid(num, a, b, start + len(str(b)))
 
-        for second in range(1, len(num)):
-            if num[0] == '0' and second > 1:
-                continue
-            for third in range(second + 1, len(num)):
-                if second <= len(num) - third and third - second <= len(num) - third:
-                    if is_additive(second, third, num):
-                        return True
+        length = len(num)
+
+        for i in range(1, length // 2 + 1):
+            if i > 1 and num[0] == '0':
+                return False
+            first = int(num[:i])
+            for j in range(i + 1, length + 1):
+                if (j > i + 1 and num[i] == '0') or j - i > length - j:
+                    break
+                second = int(num[i:j])
+                if is_valid(num, first, second, j):
+                    return True
         return False

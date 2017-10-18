@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int subarraySum(vector<int>& nums, int k) {
+    int subarraySum(vector<int> &nums, int k) {
         int sum = 0;
         int result = 0;
         unordered_map<int, int> memory;

@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int maxSumSubmatrix(vector <vector<int>> &matrix, int k) {
+    int maxSumSubmatrix(vector<vector<int>> &matrix, int k) {
         int m = matrix.size();
         int n = matrix[0].size();
         int result = INT_MIN;

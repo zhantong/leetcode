@@ -9,17 +9,17 @@
  */
 class Solution {
 public:
-    vector <Interval> merge(vector <Interval> &intervals) {
+    vector<Interval> merge(vector<Interval> &intervals) {
         if (intervals.empty()) {
             return vector<Interval>();
         }
-        sort(intervals.begin(), intervals.end(), [](const Interval &a, const Interval &b) {
+        sort(intervals.begin(), intervals.end(), [](const Interval & a, const Interval & b) {
             return a.start < b.start;
         });
         int start = intervals[0].start;
         int end = intervals[0].end;
-        vector <Interval> result;
-        for (const auto &interval:intervals) {
+        vector<Interval> result;
+        for (const auto &interval : intervals) {
             if (interval.start > end) {
                 result.push_back(Interval(start, end));
                 start = interval.start;

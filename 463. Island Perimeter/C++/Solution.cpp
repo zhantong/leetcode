@@ -9,7 +9,7 @@ public:
         for (int i = 0; i < grid.size(); i++) {
             for (int j = 0; j < grid[0].size(); j++) {
                 if (grid[i][j] == 1) {
-                    for (auto &direction:directions) {
+                    for (auto &direction : directions) {
                         if (isWater(i + direction[0], j + direction[1])) {
                             perimeter++;
                         }

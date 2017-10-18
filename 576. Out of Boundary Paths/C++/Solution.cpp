@@ -1,11 +1,12 @@
 class Solution {
 public:
     int findPaths(int m, int n, int N, int i, int j) {
-        vector < vector < vector < int >> > dp(N + 1, vector < vector < int >> (m, vector<int>(n, 0)));
+        vector<vector<vector<int>>> dp(N + 1, vector<vector<int>>(m, vector<int>(n, 0)));
         int moves[4][2] = {{-1, 0},
-                           {1,  0},
-                           {0,  -1},
-                           {0,  1}};
+            {1,  0},
+            {0,  -1},
+            {0,  1}
+        };
         for (int k = 1; k <= N; k++) {
             for (int a = 0; a < m; a++) {
                 for (int b = 0; b < n; b++) {

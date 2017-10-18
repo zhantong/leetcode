@@ -1,4 +1,3 @@
-
 class Solution {
 public:
     vector<int> majorityElement(vector<int> &nums) {
@@ -26,7 +25,7 @@ public:
             }
         }
         if (a == b) {
-            return vector < int > {a};
+            return vector<int> {a};
         }
         vector<int> result;
         countA = 0;

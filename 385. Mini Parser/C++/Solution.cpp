@@ -1,4 +1,3 @@
-
 /**
  * // This is the interface that allows for creating nested lists.
  * // You should not implement it, or speculate about its implementation
@@ -39,7 +38,7 @@ public:
         }
         int prevIndex = 0;
         int index = 0;
-        stack <NestedInteger> sta;
+        stack<NestedInteger> sta;
         while (index < s.length()) {
             if (s[index] == '[') {
                 sta.push(NestedInteger());

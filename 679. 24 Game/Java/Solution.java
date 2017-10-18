@@ -41,7 +41,7 @@ class Solution {
         Utils utils = new Utils();
         List<Double> temp = new ArrayList<>();
         for (int num : nums) {
-            temp.add((double) num);
+            temp.add((double)num);
         }
         return utils.backTrace(temp);
     }

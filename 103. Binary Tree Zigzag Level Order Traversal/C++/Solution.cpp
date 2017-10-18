@@ -9,12 +9,12 @@
  */
 class Solution {
 public:
-    vector <vector<int>> zigzagLevelOrder(TreeNode *root) {
-        vector <vector<int>> result;
+    vector<vector<int>> zigzagLevelOrder(TreeNode *root) {
+        vector<vector<int>> result;
         if (root == nullptr) {
             return result;
         }
-        queue < TreeNode * > que;
+        queue<TreeNode *> que;
         que.push(root);
         bool leftToRight = true;
         while (!que.empty()) {

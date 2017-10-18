@@ -5,7 +5,7 @@ class Solution:
         :rtype: bool
         """
         left = 0
-        right = int(c ** 0.5)
+        right = int(c**0.5)
         while left <= right:
             current = left * left + right * right
             if current == c:

@@ -1,27 +1,21 @@
 class Solution {
 public:
-    void rotate(vector<int> &nums, int k) {
-        class Utils {
-        public:
-            void rot(vector<int> &nums, int start, int end) {
-                while (start < end) {
-                    int temp = nums[start];
-                    nums[start] = nums[end];
-                    nums[end] = temp;
-                    start++;
-                    end--;
-                }
-            }
-        };
-        if (k == 0) {
-            return;
+    void rev(int a[], int s, int e) {
+        while (s < e) {
+            int t = a[s];
+            a[s] = a[e];
+            a[e] = t;
+            s++;
+            e--;
         }
-        if (k > nums.size()) {
-            k %= nums.size();
+    }
+    void rotate(int nums[], int n, int k) {
+        if (k > 0) {
+            if (k > n)
+                k %= n;
+            rev(nums, 0, n - 1);
+            rev(nums, 0, k - 1);
+            rev(nums, k, n - 1);
         }
-        Utils utils;
-        utils.rot(nums, 0, nums.size() - 1);
-        utils.rot(nums, 0, k - 1);
-        utils.rot(nums, k, nums.size() - 1);
     }
 };

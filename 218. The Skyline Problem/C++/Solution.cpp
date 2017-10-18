@@ -1,44 +1,48 @@
 class Solution {
 public:
-    template<typename T>
-    class custom_priority_queue : public std::priority_queue<T, std::vector<T>> {
-    public:
-
-        bool remove(const T &value) {
-            auto it = std::find(this->c.begin(), this->c.end(), value);
-            if (it != this->c.end()) {
-                this->c.erase(it);
-                std::make_heap(this->c.begin(), this->c.end(), this->comp);
-                return true;
-            } else {
-                return false;
-            }
-        }
-    };
-
     vector<pair<int, int>> getSkyline(vector<vector<int>> &buildings) {
-        vector<pair<int, int>> heights;
-        vector<pair<int, int>> result;
-        for (auto &building:buildings) {
-            heights.push_back(pair<int, int>(building[0], -building[2]));
-            heights.push_back(pair<int, int>(building[1], building[2]));
-        }
-        sort(heights.begin(), heights.end());
-        custom_priority_queue<int> priorityQueue;
-        priorityQueue.push(0);
-        int prev = 0;
-        for (auto &height:heights) {
-            if (height.second < 0) {
-                priorityQueue.push(-height.second);
-            } else {
-                priorityQueue.remove(height.second);
+        class Utils {
+        public:
+            vector<pair<int, int>> merge(vector<vector<int>> &buildings, int low, int high) {
+                vector<pair<int, int>> result;
+                if (low == high) {
+                    result.push_back(pair<int, int>(buildings[low][0], buildings[low][2]));
+                    result.push_back(pair<int, int>(buildings[low][1], 0));
+                } else if (low < high) {
+                    int mid = (low + high) / 2;
+                    vector<pair<int, int>> lefts = merge(buildings, low, mid);
+                    vector<pair<int, int>> rights = merge(buildings, mid + 1, high);
+                    int heightLeft = 0;
+                    int heightRight = 0;
+                    while (!lefts.empty() || !rights.empty()) {
+                        long currentLeft = lefts.empty() ? LONG_MAX : lefts.front().first;
+                        long currentRight = rights.empty() ? LONG_MAX : rights.front().first;
+                        long current = 0;
+                        if (currentLeft < currentRight) {
+                            current = lefts.front().first;
+                            heightLeft = lefts.front().second;
+                            lefts.erase(lefts.begin());
+                        } else if (currentLeft > currentRight) {
+                            current = rights.front().first;
+                            heightRight = rights.front().second;
+                            rights.erase(rights.begin());
+                        } else {
+                            current = lefts.front().first;
+                            heightLeft = lefts.front().second;
+                            heightRight = rights.front().second;
+                            lefts.erase(lefts.begin());
+                            rights.erase(rights.begin());
+                        }
+                        int height = max(heightLeft, heightRight);
+                        if (result.empty() || result.back().second != height) {
+                            result.push_back(pair<int, int>(current, height));
+                        }
+                    }
+                }
+                return result;
             }
-            int current = priorityQueue.top();
-            if (current != prev) {
-                result.push_back(pair<int, int>(height.first, current));
-                prev = current;
-            }
-        }
-        return result;
+        };
+        Utils utils;
+        return utils.merge(buildings, 0, buildings.size() - 1);
     }
 };

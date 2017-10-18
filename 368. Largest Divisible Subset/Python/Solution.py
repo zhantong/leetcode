@@ -10,7 +10,7 @@ class Solution(object):
         lengths = [1] * len(nums)
         childs = [None] * len(nums)
         max_length = 0
-        max_length_index = 0
+        max_length_index = -1
         for i in range(len(nums)):
             for j in range(i):
                 if not nums[i] % nums[j] and lengths[i] <= lengths[j]:

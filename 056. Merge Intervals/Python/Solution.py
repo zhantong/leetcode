@@ -4,6 +4,7 @@
 #         self.start = s
 #         self.end = e
 
+
 class Solution(object):
     def merge(self, intervals):
         """

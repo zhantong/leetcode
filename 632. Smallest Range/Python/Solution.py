@@ -15,7 +15,8 @@ class Solution:
             current = heapq.heappop(heap)
             if current[2] + 1 < len(nums[current[1]]):
                 temp_end = max(temp_end, nums[current[1]][current[2] + 1])
-                heapq.heappush(heap, (nums[current[1]][current[2] + 1], current[1], current[2] + 1))
+                heapq.heappush(heap,
+                               (nums[current[1]][current[2] + 1], current[1], current[2] + 1))
                 if temp_end - heap[0][0] < end - start:
                     start = heap[0][0]
                     end = temp_end

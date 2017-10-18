@@ -5,6 +5,7 @@
 #         self.next = None
 #         self.random = None
 
+
 class Solution(object):
     def copyRandomList(self, head):
         """

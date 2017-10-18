@@ -9,7 +9,7 @@
  */
 class Codec {
 public:
-    void serial(TreeNode *node, string builder) {
+    void serial(TreeNode *node, string &builder) {
         if (node != nullptr) {
             builder += to_string(node->val);
             builder += " ";
@@ -29,8 +29,8 @@ public:
         return builder;
     }
 
-    TreeNode *deserial(queue <string> &que) {
-        string value = que.front();
+    TreeNode *deserial(queue<string> &que) {
+        string &value = que.front();
         que.pop();
         if (value == "#") {
             return nullptr;
@@ -45,7 +45,7 @@ public:
     TreeNode *deserialize(string data) {
         string buf;
         stringstream ss(data);
-        queue <string> que;
+        queue<string> que;
         while (ss >> buf) {
             que.push(buf);
         }

@@ -3,7 +3,7 @@ public:
     int hIndex(vector<int> &citations) {
         int length = citations.size();
         vector<int> counts(length + 1);
-        for (const auto &citation:citations) {
+        for (const auto &citation : citations) {
             if (citation >= length) {
                 counts[length]++;
             } else {

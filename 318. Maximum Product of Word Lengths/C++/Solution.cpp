@@ -1,11 +1,11 @@
 class Solution {
 public:
-    int maxProduct(vector <string> &words) {
+    int maxProduct(vector<string> &words) {
         vector<int> bits(words.size());
         int result = 0;
         for (int i = 0; i < words.size(); i++) {
             int bit = 0;
-            for (auto letter:words[i]) {
+            for (auto letter : words[i]) {
                 bit |= 1 << (letter - 'a');
             }
             bits[i] = bit;

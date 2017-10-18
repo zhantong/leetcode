@@ -10,6 +10,7 @@ class Solution(object):
         row = []
         for word in words:
             if len(word) + count_char + len(row) > maxWidth:
+                print(row)
                 if len(row) == 1:
                     result.append(row[0] + ' ' * (maxWidth - len(row[0])))
                 else:

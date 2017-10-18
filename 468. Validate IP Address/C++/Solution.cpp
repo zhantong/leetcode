@@ -3,8 +3,8 @@ public:
     string validIPAddress(string IP) {
         class Utils {
         public:
-            vector <string> split(const string &s, char delim) {
-                vector <string> elems;
+            vector<string> split(const string &s, char delim) {
+                vector<string> elems;
                 stringstream ss;
                 ss.str(s);
                 string item;
@@ -34,7 +34,7 @@ public:
                 if (ip.empty() || ip.find(".") == 0 || ip.compare(ip.length() - 1, 1, ".") == 0) {
                     return false;
                 }
-                vector <string> tokens = split(ip, '.');
+                vector<string> tokens = split(ip, '.');
                 if (tokens.size() != 4) {
                     return false;
                 }
@@ -63,7 +63,7 @@ public:
                 if (ip.empty() || ip.find(":") == 0 || ip.compare(ip.length() - 1, 1, ":") == 0) {
                     return false;
                 }
-                vector <string> tokens = split(ip, ':');
+                vector<string> tokens = split(ip, ':');
                 if (tokens.size() != 8) {
                     return false;
                 }

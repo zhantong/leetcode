@@ -9,7 +9,7 @@
  */
 class Solution {
 public:
-    int maxPoints(vector <Point> &points) {
+    int maxPoints(vector<Point> &points) {
         class Utils {
         public:
             long transform(int a, int b) {

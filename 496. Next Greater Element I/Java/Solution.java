@@ -1,7 +1,7 @@
 public class Solution {
     public int[] nextGreaterElement(int[] findNums, int[] nums) {
         if (findNums.length == 0) {
-            return new int[]{};
+            return new int[] {};
         }
         int numMax = -1;
         for (int num : nums) {

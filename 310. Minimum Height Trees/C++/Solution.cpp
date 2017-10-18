@@ -1,8 +1,8 @@
 class Solution {
 public:
-    vector<int> findMinHeightTrees(int n, vector <pair<int, int>> &edges) {
-        vector <unordered_set<int>> graph(n);
-        for (const auto &edge:edges) {
+    vector<int> findMinHeightTrees(int n, vector<pair<int, int>> &edges) {
+        vector<unordered_set<int>> graph(n);
+        for (const auto &edge : edges) {
             graph[edge.first].insert(edge.second);
             graph[edge.second].insert(edge.first);
         }
@@ -18,9 +18,9 @@ public:
         }
         while (remain.size() > 2) {
             unordered_set<int> temp;
-            for (int item:toDelete) {
+            for (int item : toDelete) {
                 remain.erase(item);
-                for (int neighbor:graph[item]) {
+                for (int neighbor : graph[item]) {
                     graph[neighbor].erase(item);
                     if (graph[neighbor].size() == 1 && remain.find(neighbor) != remain.end()) {
                         temp.insert(neighbor);

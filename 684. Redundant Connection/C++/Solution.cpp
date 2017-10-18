@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> findRedundantConnection(vector <vector<int>> &edges) {
+    vector<int> findRedundantConnection(vector<vector<int>> &edges) {
         class UnionFind {
             int count;
             vector<int> parent;

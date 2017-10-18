@@ -10,7 +10,7 @@
 class Solution {
 public:
     vector<int> postorderTraversal(TreeNode *root) {
-        stack < TreeNode * > sta;
+        stack<TreeNode *> sta;
         vector<int> result;
         TreeNode *node = root;
         while (node != nullptr || !sta.empty()) {

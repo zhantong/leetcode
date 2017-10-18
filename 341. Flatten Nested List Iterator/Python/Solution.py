@@ -23,6 +23,7 @@
 #        :rtype List[NestedInteger]
 #        """
 
+
 class NestedIterator(object):
     def __init__(self, nestedList):
         """
@@ -53,6 +54,6 @@ class NestedIterator(object):
         return False
 
 
-        # Your NestedIterator object will be instantiated and called as such:
-        # i, v = NestedIterator(nestedList), []
-        # while i.hasNext(): v.append(i.next())
+# Your NestedIterator object will be instantiated and called as such:
+# i, v = NestedIterator(nestedList), []
+# while i.hasNext(): v.append(i.next())

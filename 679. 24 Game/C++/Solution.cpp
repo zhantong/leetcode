@@ -37,7 +37,7 @@ public:
         };
         Utils utils;
         vector<double> temp;
-        for (int num:nums) {
+        for (int num : nums) {
             temp.push_back((double) num);
         }
         return utils.backTrace(temp);

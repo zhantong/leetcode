@@ -13,7 +13,7 @@ public:
         if (root == nullptr) {
             return vector<int>();
         }
-        queue < TreeNode * > que;
+        queue<TreeNode *> que;
         vector<int> result;
         que.push(root);
         while (!que.empty()) {

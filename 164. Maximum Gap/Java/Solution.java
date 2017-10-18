@@ -9,7 +9,7 @@ public class Solution {
             theMin = Math.min(theMin, num);
             theMax = Math.max(theMax, num);
         }
-        int gap = (int) Math.ceil((double) (theMax - theMin) / (nums.length - 1));
+        int gap = (int) Math.ceil((double)(theMax - theMin) / (nums.length - 1));
         int[] bucketMin = new int[nums.length - 1];
         Arrays.fill(bucketMin, theMax + 1);
         int[] bucketMax = new int[nums.length - 1];

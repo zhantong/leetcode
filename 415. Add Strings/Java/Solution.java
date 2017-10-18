@@ -13,7 +13,7 @@ public class Solution {
                 plus += num2.charAt(j) - '0';
             }
             plus += carry;
-            builder.append((char) (plus % 10 + '0'));
+            builder.append((char)(plus % 10 + '0'));
             carry = plus / 10;
             i--;
             j--;

@@ -44,8 +44,7 @@ class MapSum:
         return root.count
 
 
-
-        # Your MapSum object will be instantiated and called as such:
-        # obj = MapSum()
-        # obj.insert(key,val)
-        # param_2 = obj.sum(prefix)
+# Your MapSum object will be instantiated and called as such:
+# obj = MapSum()
+# obj.insert(key,val)
+# param_2 = obj.sum(prefix)

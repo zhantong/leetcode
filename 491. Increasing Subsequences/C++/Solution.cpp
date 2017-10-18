@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector <vector<int>> findSubsequences(vector<int> &nums) {
+    vector<vector<int>> findSubsequences(vector<int> &nums) {
         class Utils {
         public:
             void subsequence(vector<int> &nums, set <vector<int>> &result, vector<int> &current, int start) {
@@ -20,6 +20,6 @@ public:
         Utils utils;
         vector<int> temp;
         utils.subsequence(nums, result, temp, 0);
-        return vector < vector < int >> (result.begin(), result.end());
+        return vector<vector<int>>(result.begin(), result.end());
     }
 };

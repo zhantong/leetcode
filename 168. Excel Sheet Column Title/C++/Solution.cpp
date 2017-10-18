@@ -1,12 +1,17 @@
 class Solution {
 public:
     string convertToTitle(int n) {
-        string result;
+        int i = 0;
+        char c;
+        string s;
         while (n) {
             n--;
-            result = (char) ('A' + n % 26) + result;
-            n /= 26;
+            int t;
+            t = n % 26;
+            n = n / 26;
+            c = 'A' + t;
+            s = c + s;
         }
-        return result;
+        return s;
     }
 };

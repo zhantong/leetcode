@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int findCircleNum(vector <vector<int>> &M) {
+    int findCircleNum(vector<vector<int>> &M) {
         class UnionFind {
         public:
             int count;

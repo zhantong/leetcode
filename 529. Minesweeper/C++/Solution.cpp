@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector <vector<char>> updateBoard(vector <vector<char>> &board, vector<int> &click) {
+    vector<vector<char>> updateBoard(vector<vector<char>> &board, vector<int> &click) {
         int i = click[0];
         int j = click[1];
         if (board[i][j] == 'M') {
@@ -19,7 +19,7 @@ public:
                 }
             }
             if (count != 0) {
-                board[i][j] = (char) (count + '0');
+                board[i][j] = (char)(count + '0');
             } else {
                 board[i][j] = 'B';
                 for (int a = -1; a <= 1; a++) {

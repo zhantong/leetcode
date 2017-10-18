@@ -28,9 +28,9 @@ class Solution(object):
                     return False
                 for letter in token:
                     in_int = ord(letter)
-                    if not ((in_int >= ord('0') and in_int <= ord('9')) or (
-                                    in_int >= ord('a') and in_int <= ord('f')) or (
-                                    in_int >= ord('A') and in_int <= ord('F'))):
+                    if not ((in_int >= ord('0') and in_int <= ord('9')) or
+                            (in_int >= ord('a') and in_int <= ord('f')) or
+                            (in_int >= ord('A') and in_int <= ord('F'))):
                         return False
                 return True
 

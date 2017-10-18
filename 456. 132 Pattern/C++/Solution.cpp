@@ -14,8 +14,8 @@ public:
         if (nums.size() < 3) {
             return false;
         }
-        stack <Pair> sta;
-        for (int &num:nums) {
+        stack<Pair> sta;
+        for (int &num : nums) {
             if (sta.empty() || sta.top().min > num) {
                 sta.push(Pair(num, num));
             } else if (sta.top().min < num) {

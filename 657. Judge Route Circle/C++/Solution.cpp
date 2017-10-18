@@ -8,18 +8,18 @@ public:
         int countH = 0;
         for (auto &letter : moves) {
             switch (letter) {
-                case 'U':
-                    countV++;
-                    break;
-                case 'D':
-                    countV--;
-                    break;
-                case 'L':
-                    countH++;
-                    break;
-                case 'R':
-                    countH--;
-                    break;
+            case 'U':
+                countV++;
+                break;
+            case 'D':
+                countV--;
+                break;
+            case 'L':
+                countH++;
+                break;
+            case 'R':
+                countH--;
+                break;
             }
         }
         return countV == 0 && countH == 0;

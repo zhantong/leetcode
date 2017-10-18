@@ -4,7 +4,7 @@ public:
         long first = LONG_MIN;
         long second = LONG_MIN;
         long third = LONG_MIN;
-        for (auto &num:nums) {
+        for (auto &num : nums) {
             if (num > first) {
                 third = second;
                 second = first;

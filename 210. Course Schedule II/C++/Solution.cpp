@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> findOrder(int numCourses, vector <pair<int, int>> &prerequisites) {
+    vector<int> findOrder(int numCourses, vector<pair<int, int>> &prerequisites) {
         class Utils {
         public:
             bool dfs(unordered_map<int, vector<int>> &graph, int i, vector<int> &order, vector<bool> &visiting,

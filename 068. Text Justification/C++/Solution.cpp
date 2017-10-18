@@ -1,9 +1,9 @@
 class Solution {
 public:
-    vector <string> fullJustify(vector <string> &words, int maxWidth) {
-        vector <string> results;
+    vector<string> fullJustify(vector<string> &words, int maxWidth) {
+        vector<string> results;
         int countChar = 0;
-        vector <string> row;
+        vector<string> row;
         for (auto &word : words) {
             if (word.length() + countChar + row.size() > maxWidth) {
                 if (row.size() == 1) {

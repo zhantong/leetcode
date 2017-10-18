@@ -43,9 +43,9 @@ public:
         ListNode *result = new ListNode(1);
         Utils utils;
         int carry = length1 > length2 ? utils.twoNumbers(l1, l2, length1, length2, result) : utils.twoNumbers(l2, l1,
-                                                                                                              length2,
-                                                                                                              length1,
-                                                                                                              result);
+                    length2,
+                    length1,
+                    result);
         if (carry == 0) {
             result = result->next;
         }

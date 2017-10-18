@@ -9,11 +9,11 @@
  */
 class Solution {
 public:
-    vector <vector<string>> printTree(TreeNode *root) {
+    vector<vector<string>> printTree(TreeNode *root) {
         class Utils {
         public:
             int depth;
-            vector <vector<string>> result;
+            vector<vector<string>> result;
 
             int getDepth(TreeNode *root) {
                 if (root == nullptr) {
@@ -35,7 +35,7 @@ public:
         };
         Utils utils;
         utils.depth = utils.getDepth(root);
-        utils.result = vector < vector < string >> (utils.depth, vector<string>((int) pow(2, utils.depth) - 1, ""));
+        utils.result = vector<vector<string>>(utils.depth, vector<string>((int) pow(2, utils.depth) - 1, ""));
         utils.printTree(root, 0, (int) pow(2, utils.depth - 1) - 1);
         return utils.result;
     }

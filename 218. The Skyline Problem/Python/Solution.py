@@ -4,23 +4,32 @@ class Solution(object):
         :type buildings: List[List[int]]
         :rtype: List[List[int]]
         """
-        heights = []
-        for building in buildings:
-            heights.append((building[0], -building[2]))
-            heights.append((building[1], building[2]))
-        heights.sort()
-        h = []
-        heapq.heappush(h, 0)
-        prev = 0
-        result = []
-        for height in heights:
-            if height[1] < 0:
-                heapq.heappush(h, height[1])
-            else:
-                h.remove(-height[1])
-                heapq.heapify(h)
-            current = -h[0]
-            if prev != current:
-                result.append((height[0], current))
-                prev = current
-        return result
+
+        def merge(buildings, low, high):
+            result = []
+            if low == high:
+                result.append((buildings[low][0], buildings[low][2]))
+                result.append((buildings[low][1], 0))
+            elif low < high:
+                mid = (low + high) // 2
+                lefts = merge(buildings, low, mid)
+                rights = merge(buildings, mid + 1, high)
+                height_left = 0
+                height_right = 0
+                while lefts or rights:
+                    current_left = lefts[0][0] if lefts else sys.maxsize
+                    current_right = rights[0][0] if rights else sys.maxsize
+                    current = 0
+                    if current_left < current_right:
+                        current, height_left = lefts.pop(0)
+                    elif current_left > current_right:
+                        current, height_right = rights.pop(0)
+                    else:
+                        current, height_left = lefts.pop(0)
+                        current, height_right = rights.pop(0)
+                    height = max(height_left, height_right)
+                    if not result or result[-1][1] != height:
+                        result.append([current, height])
+            return result
+
+        return merge(buildings, 0, len(buildings) - 1)

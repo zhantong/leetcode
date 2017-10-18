@@ -34,7 +34,8 @@ class Solution(object):
             if low >= high:
                 return 0
             mid = (low + high) // 2
-            count = merge_sort(nums, temp_array, low, mid) + merge_sort(nums, temp_array, mid + 1, high)
+            count = merge_sort(nums, temp_array, low, mid) + merge_sort(
+                nums, temp_array, mid + 1, high)
             j = mid + 1
             for i in range(low, mid + 1):
                 while j <= high and nums[i] / 2.0 > nums[j]:

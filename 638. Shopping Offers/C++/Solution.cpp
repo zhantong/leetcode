@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int shoppingOffers(vector<int> &price, vector <vector<int>> &special, vector<int> &needs) {
+    int shoppingOffers(vector<int> &price, vector<vector<int>> &special, vector<int> &needs) {
         class Utils {
         public:
             string toKey(vector<int> &array) {
@@ -19,7 +19,7 @@ public:
                 return array;
             }
 
-            int trace(vector<int> &prices, vector <vector<int>> &specials, string needsKey,
+            int trace(vector<int> &prices, vector<vector<int>> &specials, string needsKey,
                       unordered_map<string, int> &memory) {
                 if (memory.count(needsKey)) {
                     return memory[needsKey];

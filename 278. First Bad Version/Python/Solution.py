@@ -3,6 +3,7 @@
 # @return a bool
 # def isBadVersion(version):
 
+
 class Solution(object):
     def firstBadVersion(self, n):
         """

@@ -1,80 +1,59 @@
 class Solution {
 public:
     vector<double> medianSlidingWindow(vector<int> &nums, int k) {
-        class Utils {
-            class custom_priority_queue : public std::priority_queue<long, std::vector < long>>
-
-            {
-                public:
-
-                bool remove(const long &value) {
-                    auto it = std::find(this->c.begin(), this->c.end(), value);
-                    if (it != this->c.end()) {
-                        this->c.erase(it);
-                        std::make_heap(this->c.begin(), this->c.end(), this->comp);
-                        return true;
-                    } else {
-                        return false;
-                    }
+        struct Min {
+            bool operator()(pair<int, int> &p1, pair<int, int> &p2) {
+                if (p1.first == p2.first) {
+                    return p1.second > p2.second;
                 }
-            };
-
-        public:
-            custom_priority_queue minHeap;
-            custom_priority_queue maxHeap;
-
-            double getMedian() {
-                if (maxHeap.empty() && minHeap.empty()) {
-                    return 0;
-                }
-                if (maxHeap.size() == minHeap.size()) {
-                    return ((double) maxHeap.top() - minHeap.top()) / 2.0;
-                }
-                return -(double) minHeap.top();
-            }
-
-            void add(int num) {
-                if (num < getMedian()) {
-                    maxHeap.push((long) num);
-                } else {
-                    minHeap.push(-(long) num);
-                }
-                if (maxHeap.size() > minHeap.size()) {
-                    minHeap.push(-maxHeap.top());
-                    maxHeap.pop();
-                } else if (minHeap.size() > maxHeap.size() + 1) {
-                    maxHeap.push(-minHeap.top());
-                    minHeap.pop();
-                }
-            }
-
-            void remove(int num) {
-                if (num < getMedian()) {
-                    maxHeap.remove((long) num);
-                } else {
-                    minHeap.remove(-(long) num);
-                }
-                if (maxHeap.size() > minHeap.size()) {
-                    minHeap.push(-maxHeap.top());
-                    maxHeap.pop();
-                } else if (minHeap.size() > maxHeap.size() + 1) {
-                    maxHeap.push(-minHeap.top());
-                    minHeap.pop();
-                }
+                return p1.first > p2.first;
             }
         };
-        vector<double> result;
-        Utils utils;
-        for (int i = 0; i <= nums.size(); i++) {
-            if (i >= k) {
-                double temp = utils.getMedian();
-                temp = temp == 0 ? 0 : temp;
-                result.push_back(temp);
+        struct Max {
+            bool operator()(pair<int, int> &p1, pair<int, int> &p2) {
+                if (p1.first == p2.first) {
+                    return p1.second > p2.second;
+                }
+                return p1.first < p2.first;
             }
-            if (i < nums.size()) {
-                utils.add(nums[i]);
+        };
+        priority_queue<pair<int, int>, vector<pair<int, int>>, Min> minHeap;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, Max> maxHeap;
+        vector<double> result;
+        for (int i = 0; i < k; i++) {
+            maxHeap.push(pair<int, int>(nums[i], i));
+        }
+        for (int i = 0; i < (k - k / 2); i++) {
+            minHeap.push(pair<int, int>(maxHeap.top().first, maxHeap.top().second));
+            maxHeap.pop();
+        }
+
+        for (int i = k; i < nums.size(); i++) {
+            int num = nums[i];
+            result.push_back(
+                    k % 2 == 0 ? ((long) minHeap.top().first + maxHeap.top().first) / 2.0 : minHeap.top().first / 1.0);
+            if (num >= minHeap.top().first) {
+                minHeap.push(pair<int, int>(num, i));
+                if (nums[i - k] <= minHeap.top().first) {
+                    maxHeap.push(pair<int, int>(minHeap.top().first, minHeap.top().second));
+                    minHeap.pop();
+                }
+            } else {
+                maxHeap.push(pair<int, int>(num, i));
+                if (nums[i - k] >= minHeap.top().first) {
+                    minHeap.push(pair<int, int>(maxHeap.top().first, maxHeap.top().second));
+                    maxHeap.pop();
+                }
+            }
+            while (!maxHeap.empty() && maxHeap.top().second <= i - k) {
+                maxHeap.pop();
+            }
+            while (!minHeap.empty() && minHeap.top().second <= i - k) {
+                minHeap.pop();
             }
         }
+        result.push_back(
+                k % 2 == 0 ? ((long) minHeap.top().first + maxHeap.top().first) / 2.0 : minHeap.top().first / 1.0);
         return result;
     }
 };

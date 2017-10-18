@@ -1,10 +1,9 @@
-
 class Solution {
 public:
-    void solveSudoku(vector <vector<char>> &board) {
+    void solveSudoku(vector<vector<char>> &board) {
         class Utils {
         public:
-            bool sudoku(vector <vector<char>> &board, int pos) {
+            bool sudoku(vector<vector<char>> &board, int pos) {
                 if (pos == 81) {
                     return true;
                 }
@@ -25,7 +24,7 @@ public:
                 return false;
             }
 
-            bool isValid(vector <vector<char>> &board, int row, int column, char letter) {
+            bool isValid(vector<vector<char>> &board, int row, int column, char letter) {
                 for (int i = 0; i < 9; i++) {
                     if (board[i][column] == letter) {
                         return false;

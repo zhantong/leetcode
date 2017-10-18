@@ -11,7 +11,7 @@ class Solution {
 public:
     bool findTarget(TreeNode *root, int k) {
         unordered_set<int> candidates;
-        stack < TreeNode * > sta;
+        stack<TreeNode *> sta;
         while (!sta.empty() || root != nullptr) {
             if (root != nullptr) {
                 int val = root->val;

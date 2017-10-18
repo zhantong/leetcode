@@ -10,7 +10,7 @@
 class Solution {
 public:
     int findBottomLeftValue(TreeNode *root) {
-        queue < TreeNode * > que;
+        queue<TreeNode *> que;
         que.push(root);
         int result = root->val;
         while (!que.empty()) {

@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector <vector<string>> partition(string s) {
+    vector<vector<string>> partition(string s) {
         class Utils {
         public:
             bool isPalindrome(string s) {
@@ -16,7 +16,7 @@ public:
                 return true;
             }
 
-            void part(string s, vector <vector<string>> &result, vector <string> &current) {
+            void part(string s, vector<vector<string>> &result, vector<string> &current) {
                 if (s.empty()) {
                     result.push_back(current);
                     return;
@@ -31,9 +31,9 @@ public:
                 }
             }
         };
-        vector <vector<string>> result;
+        vector<vector<string>> result;
         Utils utils;
-        vector <string> temp;
+        vector<string> temp;
         utils.part(s, result, temp);
         return result;
     }

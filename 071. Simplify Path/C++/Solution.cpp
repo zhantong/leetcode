@@ -1,7 +1,7 @@
 class Solution {
 public:
     string simplifyPath(string path) {
-        vector <string> stack;
+        vector<string> stack;
         istringstream iss(path);
         string item;
         while (getline(iss, item, '/')) {

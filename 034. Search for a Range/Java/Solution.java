@@ -16,15 +16,15 @@ public class Solution {
             }
         }
         if (nums.length == 0) {
-            return new int[]{-1, -1};
+            return new int[] {-1, -1};
         }
         Utils utils = new Utils();
         int low = utils.search(nums, target);
         int high = utils.search(nums, target + 1);
         high--;
         if (low < nums.length && nums[low] == target) {
-            return new int[]{low, high};
+            return new int[] {low, high};
         }
-        return new int[]{-1, -1};
+        return new int[] {-1, -1};
     }
 }

@@ -43,13 +43,18 @@ class LFUCache(object):
             node.value = value
 
             if node.times + 1 in self.memory_times:
-                if self.memory_times[node.times] == node:
+                if self.memory_times[node.times] != node:
+                    node.prev.next = node.next
+                    node.next.prev = node.prev
+                else:
                     if node.next.times == node.times:
                         self.memory_times[node.times] = node.next
+                        node.prev.next = node.next
+                        node.next.prev = node.prev
                     else:
                         del self.memory_times[node.times]
-                node.prev.next = node.next
-                node.next.prev = node.prev
+                        node.prev.next = node.next
+                        node.next.prev = node.prev
                 node.prev = self.memory_times[node.times + 1].prev
                 node.next = self.memory_times[node.times + 1]
                 node.next.prev = node
@@ -63,12 +68,14 @@ class LFUCache(object):
                     node.next = self.memory_times[node.times]
                     node.next.prev = node
                     node.prev.next = node
+                    self.memory_times[node.times + 1] = node
                 else:
                     if node.next.times == node.times:
                         self.memory_times[node.times] = node.next
+                        self.memory_times[node.times + 1] = node
                     else:
                         del self.memory_times[node.times]
-                self.memory_times[node.times + 1] = node
+                        self.memory_times[node.times + 1] = node
             node.times += 1
         else:
             node = self.Node(key, value, 1)
@@ -84,18 +91,19 @@ class LFUCache(object):
             if 1 in self.memory_times:
                 node.prev = self.memory_times[1].prev
                 node.next = self.memory_times[1]
-
+                node.next.prev = node
+                node.prev.next = node
+                self.memory_times[1] = node
             else:
                 node.prev = self.tail.prev
                 node.next = self.tail
-            node.next.prev = node
-            node.prev.next = node
-            self.memory_times[1] = node
+                node.next.prev = node
+                node.prev.next = node
+                self.memory_times[1] = node
             self.capacity -= 1
 
 
-
-            # Your LFUCache object will be instantiated and called as such:
-            # obj = LFUCache(capacity)
-            # param_1 = obj.get(key)
-            # obj.put(key,value)
+# Your LFUCache object will be instantiated and called as such:
+# obj = LFUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)

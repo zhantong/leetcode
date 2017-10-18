@@ -1,9 +1,9 @@
 class Solution {
 public:
-    int numIslands(vector <vector<char>> &grid) {
+    int numIslands(vector<vector<char>> &grid) {
         class Utils {
         public:
-            void dfs(vector <vector<char>> &grid, int i, int j, int m, int n) {
+            void dfs(vector<vector<char>> &grid, int i, int j, int m, int n) {
                 if (i < 0 || i == m || j < 0 || j == n || grid[i][j] == '0') {
                     return;
                 }

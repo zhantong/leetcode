@@ -1,12 +1,12 @@
 class Solution {
 public:
-    int maximalSquare(vector <vector<char>> &matrix) {
+    int maximalSquare(vector<vector<char>> &matrix) {
         if (matrix.size() == 0) {
             return 0;
         }
         int m = matrix.size();
         int n = matrix[0].size();
-        vector <vector<int>> memory(m, vector<int>(n));
+        vector<vector<int>> memory(m, vector<int>(n));
         int result = 0;
         for (int i = 0; i < m; i++) {
             if (matrix[i][0] == '1') {

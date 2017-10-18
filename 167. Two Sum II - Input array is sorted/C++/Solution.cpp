@@ -15,6 +15,6 @@ public:
             }
         }
 
-        return vector < int > {i + 1, j + 1};
+        return vector<int> {i + 1, j + 1};
     }
 };

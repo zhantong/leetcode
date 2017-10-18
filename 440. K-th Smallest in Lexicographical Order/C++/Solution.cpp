@@ -8,7 +8,7 @@ public:
             long start = current;
             long end = start + 1;
             while (start <= n) {
-                steps += min((long) n + 1, end) - start;
+                steps += min((long)n + 1, end) - start;
                 start *= 10;
                 end *= 10;
             }

@@ -1,9 +1,9 @@
 class Solution {
 public:
-    bool isValidSudoku(vector <vector<char>> &board) {
-        for (const auto &row:board) {
+    bool isValidSudoku(vector<vector<char>> &board) {
+        for (const auto &row : board) {
             vector<bool> counts(9, false);
-            for (const auto &item:row) {
+            for (const auto &item : row) {
                 if (item != '.') {
                     if (counts[item - '1']) {
                         return false;

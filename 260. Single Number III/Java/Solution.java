@@ -14,6 +14,6 @@ public class Solution {
                 second ^= num;
             }
         }
-        return new int[]{first, second};
+        return new int[] {first, second};
     }
 }

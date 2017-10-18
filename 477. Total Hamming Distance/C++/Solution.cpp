@@ -5,7 +5,7 @@ public:
         for (int i = 0; i < 32; i++) {
             int base = 1 << i;
             int countOnes = 0;
-            for (int &num:nums) {
+            for (int &num : nums) {
                 if (base & num) {
                     countOnes++;
                 }

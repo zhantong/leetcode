@@ -37,18 +37,19 @@ class MagicDictionary:
                 return root.is_word and is_changed
             if is_changed:
                 i = ord(word[index]) - ord('a')
-                return (not root.children[i] is None) and dfs(word, root.children[i], index + 1, is_changed)
+                return (not root.children[i] is None) and dfs(word, root.children[i], index + 1,
+                                                              is_changed)
             for i in range(26):
                 if root.children[i]:
-                    if dfs(word, root.children[i], index + 1, False if ord(word[index]) - ord('a') == i else True):
+                    if dfs(word, root.children[i], index + 1, False
+                           if ord(word[index]) - ord('a') == i else True):
                         return True
             return False
 
         return dfs(word, self.root, 0, False)
 
 
-
-        # Your MagicDictionary object will be instantiated and called as such:
-        # obj = MagicDictionary()
-        # obj.buildDict(dict)
-        # param_2 = obj.search(word)
+# Your MagicDictionary object will be instantiated and called as such:
+# obj = MagicDictionary()
+# obj.buildDict(dict)
+# param_2 = obj.search(word)

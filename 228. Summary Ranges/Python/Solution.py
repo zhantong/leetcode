@@ -4,21 +4,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[str]
         """
-        if not nums:
-            return []
-        start = 0
-        offset = nums[0]
+        length = len(nums)
         result = []
-        for i in range(1, len(nums)):
-            if i + offset != nums[i]:
-                if start == i - 1:
-                    result.append(str(nums[start]))
-                else:
-                    result.append('%d->%d' % (nums[start], nums[i - 1]))
-                offset = nums[i] - i
-                start = i
-        if start == len(nums) - 1:
-            result.append(str(nums[start]))
-        else:
-            result.append('%d->%d' % (nums[start], nums[-1]))
+        i = 0
+        while i < length:
+            j = i + 1
+            while j < length and nums[j - 1] + 1 == nums[j]:
+                j += 1
+            if i + 1 == j:
+                result.append(str(nums[i]))
+            else:
+                result.append(str(nums[i]) + "->" + str(nums[j - 1]))
+            i = j
         return result

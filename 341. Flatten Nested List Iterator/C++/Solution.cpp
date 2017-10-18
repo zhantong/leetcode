@@ -16,9 +16,9 @@
  * };
  */
 class NestedIterator {
-    stack <NestedInteger> sta;
+    stack<NestedInteger> sta;
 public:
-    NestedIterator(vector <NestedInteger> &nestedList) {
+    NestedIterator(vector<NestedInteger> &nestedList) {
         for (auto it = nestedList.rbegin(); it != nestedList.rend(); it++) {
             sta.push(*it);
         }
@@ -35,7 +35,7 @@ public:
             if (sta.top().isInteger()) {
                 return true;
             }
-            vector <NestedInteger> nestedList = sta.top().getList();
+            vector<NestedInteger> nestedList = sta.top().getList();
             sta.pop();
             for (auto it = nestedList.rbegin(); it != nestedList.rend(); it++) {
                 sta.push(*it);

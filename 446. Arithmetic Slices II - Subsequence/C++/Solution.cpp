@@ -3,7 +3,7 @@ public:
     int numberOfArithmeticSlices(vector<int> &A) {
         int result = 0;
         int length = A.size();
-        vector <unordered_map<int, int>> memory(length);
+        vector<unordered_map<int, int>> memory(length);
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < i; j++) {
                 long diffInLong = (long) A[i] - A[j];

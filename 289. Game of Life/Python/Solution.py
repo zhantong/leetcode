@@ -14,7 +14,8 @@ class Solution(object):
                         if a >= 0 and b >= 0 and a < m and b < n and board[a][b] & 1:
                             count += 1
                 count -= board[i][j] & 1
-                if (board[i][j] & 1 and (count == 2 or count == 3)) or (not board[i][j] & 1 and count == 3):
+                if (board[i][j] & 1 and
+                        (count == 2 or count == 3)) or (not board[i][j] & 1 and count == 3):
                     board[i][j] |= 2
         for i in range(m):
             for j in range(n):

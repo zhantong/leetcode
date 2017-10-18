@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector <vector<int>> matrixReshape(vector <vector<int>> &nums, int r, int c) {
+    vector<vector<int>> matrixReshape(vector<vector<int>> &nums, int r, int c) {
         if (nums.empty()) {
             return nums;
         }
@@ -9,7 +9,7 @@ public:
         if (m * n < r * c) {
             return nums;
         }
-        vector <vector<int>> newNums(r, vector<int>(c));
+        vector<vector<int>> newNums(r, vector<int>(c));
         for (int i = 0; i < r * c; i++) {
             newNums[i / c][i % c] = nums[i / n][i % n];
         }

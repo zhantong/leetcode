@@ -20,8 +20,8 @@ class Solution(object):
         if not nums:
             return [-1, -1]
         low = search(nums, target)
+        if low == len(nums) or nums[low] != target:
+            return [-1, -1]
         high = search(nums, target + 1)
         high -= 1
-        if low < len(nums) and nums[low] == target:
-            return [low, high]
-        return [-1, -1]
+        return [low, high]

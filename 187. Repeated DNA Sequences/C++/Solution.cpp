@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector <string> findRepeatedDnaSequences(string s) {
+    vector<string> findRepeatedDnaSequences(string s) {
         if (s.length() < 10) {
             return vector<string>();
         }
@@ -11,7 +11,7 @@ public:
         pattern['C'] = 1;
         pattern['G'] = 2;
         pattern['T'] = 3;
-        vector <string> result;
+        vector<string> result;
         for (int i = 0; i < s.length() - 9; i++) {
             cout << "go" << endl;
             int current = 0;

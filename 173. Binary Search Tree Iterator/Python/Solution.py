@@ -5,6 +5,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class BSTIterator(object):
     def __init__(self, root):
         """
@@ -34,6 +35,6 @@ class BSTIterator(object):
         return result
 
 
-        # Your BSTIterator will be called like this:
-        # i, v = BSTIterator(root), []
-        # while i.hasNext(): v.append(i.next())
+# Your BSTIterator will be called like this:
+# i, v = BSTIterator(root), []
+# while i.hasNext(): v.append(i.next())

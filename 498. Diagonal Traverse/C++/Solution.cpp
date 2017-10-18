@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> findDiagonalOrder(vector <vector<int>> &matrix) {
+    vector<int> findDiagonalOrder(vector<vector<int>> &matrix) {
         vector<int> result;
         if (matrix.size() == 0) {
             return result;

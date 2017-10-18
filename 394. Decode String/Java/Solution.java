@@ -1,6 +1,5 @@
 public class Solution {
     int index = 0;
-
     public String decodeString(String s) {
         StringBuilder builder = new StringBuilder();
         while (index < s.length() && s.charAt(index) != ']') {

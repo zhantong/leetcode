@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> findSubstring(string s, vector <string> &words) {
+    vector<int> findSubstring(string s, vector<string> &words) {
         vector<int> result;
         unordered_map<string, int> counts;
         int wordsLength = words.size();
@@ -11,7 +11,7 @@ public:
             }
             counts[word]++;
         }
-        for (int i = 0; i <= (int) s.length() - wordsLength * wordLength; i++) {
+        for (int i = 0; i <= (int)s.length() - wordsLength * wordLength; i++) {
             unordered_map<string, int> currentCounts;
             int j = 0;
             while (j < wordsLength) {

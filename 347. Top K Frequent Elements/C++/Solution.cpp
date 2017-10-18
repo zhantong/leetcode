@@ -3,15 +3,15 @@ public:
     vector<int> topKFrequent(vector<int> &nums, int k) {
         unordered_map<int, int> freqDict;
         int maxFreq = -1;
-        for (auto num:nums) {
+        for (auto num : nums) {
             if (freqDict.find(num) == freqDict.end()) {
                 freqDict[num] = 0;
             }
             freqDict[num]++;
             maxFreq = max(maxFreq, freqDict[num]);
         }
-        vector <vector<int>> freqList(maxFreq + 1);
-        for (auto item:freqDict) {
+        vector<vector<int>> freqList(maxFreq + 1);
+        for (auto item : freqDict) {
             freqList[item.second].push_back(item.first);
         }
         vector<int> result;

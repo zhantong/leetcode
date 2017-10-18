@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         """
@@ -37,10 +38,9 @@ class Solution(object):
             return sum_two // 10
 
         result = ListNode(0)
-        carry = two_numbers(l1, l2, length_1, length_2, result) if length_1 > length_2 else two_numbers(l2, l1,
-                                                                                                        length_2,
-                                                                                                        length_1,
-                                                                                                        result)
+        carry = two_numbers(l1, l2, length_1, length_2,
+                            result) if length_1 > length_2 else two_numbers(
+                                l2, l1, length_2, length_1, result)
         if carry:
             result.val = 1
         else:

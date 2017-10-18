@@ -1,7 +1,7 @@
 public class Solution {
     public int[][] reconstructQueue(int[][] people) {
         if (people.length == 0) {
-            return new int[][]{};
+            return new int[][] {};
         }
         List<int[]> resultList = new ArrayList<>();
         Arrays.sort(people, new Comparator<int[]>() {

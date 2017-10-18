@@ -24,7 +24,7 @@ public:
                 return importance;
             }
         };
-        unordered_map < int, Employee * > infos;
+        unordered_map<int, Employee *> infos;
         for (Employee *employee : employees) {
             infos[employee->id] = employee;
         }

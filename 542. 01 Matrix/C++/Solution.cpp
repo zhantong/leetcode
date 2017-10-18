@@ -1,7 +1,7 @@
 class Solution {
 public:
-    vector <vector<int>> updateMatrix(vector <vector<int>> &matrix) {
-        queue <pair<int, int>> que;
+    vector<vector<int>> updateMatrix(vector<vector<int>> &matrix) {
+        queue<pair<int, int>> que;
         int m = matrix.size();
         int n = matrix[0].size();
         int MAX_VALUE = m + n;

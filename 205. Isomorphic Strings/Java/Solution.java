@@ -1,23 +1,15 @@
-public class Solution {
+class Solution {
     public boolean isIsomorphic(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
-        }
-        Map<Character, Integer> pattern = new HashMap<>();
-        Set<Character> exist = new HashSet<>();
+        int[] m1 = new int[256];
+        int[] m2 = new int[256];
         for (int i = 0; i < s.length(); i++) {
-            boolean sExist = exist.contains(s.charAt(i));
-            boolean tExist = pattern.containsKey(t.charAt(i));
-            if (sExist && tExist) {
-                if (pattern.get(t.charAt(i)) + t.charAt(i) != s.charAt(i)) {
-                    return false;
-                }
-            } else if (!sExist && !tExist) {
-                exist.add(s.charAt(i));
-                pattern.put(t.charAt(i), s.charAt(i) - t.charAt(i));
-            } else {
+            char k1 = s.charAt(i);
+            char k2 = t.charAt(i);
+            if (m1[k1] != m2[k2]) {
                 return false;
             }
+            m1[k1] = i + 1;
+            m2[k2] = i + 1;
         }
         return true;
     }

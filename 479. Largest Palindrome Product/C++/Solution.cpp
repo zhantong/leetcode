@@ -11,7 +11,7 @@ public:
             long current = stol(to_string(i) + iInStr);
             for (long item = max; item * item >= current; item--) {
                 if (current % item == 0) {
-                    return (int) (current % 1337);
+                    return (int)(current % 1337);
                 }
             }
         }

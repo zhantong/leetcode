@@ -6,7 +6,7 @@ public:
         if (s1.length() + s2.length() != s3.length()) {
             return false;
         }
-        vector <vector<bool>> dp(length1, vector<bool>(length2, false));
+        vector<vector<bool>> dp(length1, vector<bool>(length2, false));
         dp[0][0] = true;
         for (int i = 1; i < length1; i++) {
             dp[i][0] = dp[i - 1][0] && s1[i - 1] == s3[i - 1];

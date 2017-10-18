@@ -1,10 +1,10 @@
 class Solution {
 public:
-    vector <string> addOperators(string num, int target) {
+    vector<string> addOperators(string num, int target) {
         class Utils {
         public:
             void
-            backTrace(string &num, int target, int i, string current, vector <string> &result, long value, long prev) {
+            backTrace(string &num, int target, int i, string current, vector<string> &result, long value, long prev) {
                 if (i == num.length()) {
                     if (value == target) {
                         result.push_back(current);
@@ -29,7 +29,7 @@ public:
             }
         };
         Utils utils;
-        vector <string> result;
+        vector<string> result;
         string temp = "";
         utils.backTrace(num, target, 0, temp, result, 0, 0);
         return result;

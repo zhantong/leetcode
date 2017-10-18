@@ -14,7 +14,7 @@ public:
                 plus += num2[j] - '0';
             }
             plus += carry;
-            result += (char) (plus % 10 + '0');
+            result += (char)(plus % 10 + '0');
             carry = plus / 10;
             i--;
             j--;

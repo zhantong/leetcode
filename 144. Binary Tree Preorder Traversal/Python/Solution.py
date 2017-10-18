@@ -5,6 +5,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def preorderTraversal(self, root):
         """

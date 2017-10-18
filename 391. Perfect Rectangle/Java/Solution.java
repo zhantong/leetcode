@@ -28,10 +28,10 @@ public class Solution {
             }
         }
         return got.size() == 4
-                && got.contains(x1 + " " + y1)
-                && got.contains(x1 + " " + y2)
-                && got.contains(x2 + " " + y1)
-                && got.contains(x2 + " " + y2)
-                && sumUp == (x2 - x1) * (y2 - y1);
+               && got.contains(x1 + " " + y1)
+               && got.contains(x1 + " " + y2)
+               && got.contains(x2 + " " + y1)
+               && got.contains(x2 + " " + y2)
+               && sumUp == (x2 - x1) * (y2 - y1);
     }
 }

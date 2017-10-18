@@ -13,6 +13,6 @@ public class Solution {
                 i++;
             }
         }
-        return new int[]{i + 1, j + 1};
+        return new int[] {i + 1, j + 1};
     }
 }

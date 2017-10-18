@@ -4,7 +4,7 @@ public:
         if (prices.size() == 0) {
             return 0;
         }
-        vector <vector<int>> dp(3, vector<int>(prices.size(), 0));
+        vector<vector<int>> dp(3, vector<int>(prices.size(), 0));
         for (int time = 1; time < 3; time++) {
             int current = dp[time - 1][0] - prices[0];
             for (int i = 1; i < prices.size(); i++) {

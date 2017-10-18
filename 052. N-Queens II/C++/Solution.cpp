@@ -3,7 +3,7 @@ public:
     int totalNQueens(int n) {
         class Utils {
         public:
-            bool isValid(vector <string> &board, int i, int j) {
+            bool isValid(vector<string> &board, int i, int j) {
                 for (int x = 0; x < i; x++) {
                     for (int y = 0; y < board[i].length(); y++) {
                         if (board[x][y] == 'Q' && (y == j || i - x == j - y || i - x == y - j)) {
@@ -14,7 +14,7 @@ public:
                 return true;
             }
 
-            void backTrace(vector <string> &board, int rowIndex, int &result) {
+            void backTrace(vector<string> &board, int rowIndex, int &result) {
                 if (rowIndex == board.size()) {
                     result++;
                     return;
@@ -28,7 +28,7 @@ public:
                 }
             }
         };
-        vector <string> board(n, string(n, '.'));
+        vector<string> board(n, string(n, '.'));
         Utils utils;
         int result = 0;
         utils.backTrace(board, 0, result);

@@ -24,7 +24,8 @@ class Solution(object):
             return root
 
         def back_trace(board, i, j, m, n, node, result):
-            if i < 0 or i >= m or j < 0 or j >= n or board[i][j] == '#' or not node.next[ord(board[i][j]) - ord('a')]:
+            if i < 0 or i >= m or j < 0 or j >= n or board[i][j] == '#' or not node.next[ord(
+                    board[i][j]) - ord('a')]:
                 return
             letter = board[i][j]
             node = node.next[ord(letter) - ord('a')]

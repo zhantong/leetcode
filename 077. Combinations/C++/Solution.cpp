@@ -1,9 +1,9 @@
 class Solution {
 public:
-    vector <vector<int>> combine(int n, int k) {
+    vector<vector<int>> combine(int n, int k) {
         class Utils {
         public:
-            void comb(vector <vector<int>> &result, vector<int> &current, int start, int n, int k) {
+            void comb(vector<vector<int>> &result, vector<int> &current, int start, int n, int k) {
                 if (k == 0) {
                     result.push_back(current);
                 } else {
@@ -15,7 +15,7 @@ public:
                 }
             }
         };
-        vector <vector<int>> result;
+        vector<vector<int>> result;
         Utils utils;
         vector<int> temp;
         utils.comb(result, temp, 1, n, k);

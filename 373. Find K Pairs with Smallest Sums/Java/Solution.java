@@ -24,7 +24,7 @@ public class Solution {
         queue.add(new Pair(nums1[0] + nums2[0], 0, 0));
         while (!queue.isEmpty() && result.size() < k) {
             Pair pair = queue.poll();
-            result.add(new int[]{nums1[pair.i], nums2[pair.j]});
+            result.add(new int[] {nums1[pair.i], nums2[pair.j]});
             if (pair.j < nums2.length - 1) {
                 queue.add(new Pair(nums1[pair.i] + nums2[pair.j + 1], pair.i, pair.j + 1));
             }

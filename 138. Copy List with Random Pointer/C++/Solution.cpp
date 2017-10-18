@@ -12,7 +12,7 @@ public:
         if (head == nullptr) {
             return head;
         }
-        unordered_map < RandomListNode * , RandomListNode * > memory;
+        unordered_map<RandomListNode *, RandomListNode *> memory;
         RandomListNode *newHead = new RandomListNode(head->label);
         RandomListNode *current = head;
         RandomListNode *newCurrent = newHead;

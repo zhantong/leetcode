@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int leastBricks(vector <vector<int>> &wall) {
+    int leastBricks(vector<vector<int>> &wall) {
         unordered_map<int, int> count;
         for (auto &row : wall) {
             int current = 0;

@@ -1,9 +1,9 @@
 class Solution {
 public:
-    vector <string> restoreIpAddresses(string s) {
+    vector<string> restoreIpAddresses(string s) {
         class Utils {
         public:
-            void backTrack(string &s, vector <string> &result, string &current, int index, int count) {
+            void backTrack(string &s, vector<string> &result, string &current, int index, int count) {
                 if (count > 4) {
                     return;
                 }
@@ -24,7 +24,7 @@ public:
                 }
             }
         };
-        vector <string> result;
+        vector<string> result;
         Utils utils;
         string temp = "";
         utils.backTrack(s, result, temp, 0, 0);

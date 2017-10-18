@@ -6,29 +6,34 @@ class Solution(object):
         :rtype: List[int]
         """
 
-        def dfs(graph, i, order, visiting, visited):
-            visiting[i] = True
-            visited[i] = True
-            for neighbor in graph[i]:
+        def topological_sort(graph, n):
+            order = []
+            visiting = [False] * n
+            visited = [False] * n
+            for i in range(n):
+                if not visited[i]:
+                    if not dfs(graph, i, visiting, visited, order):
+                        # raise ValueError('cycle')
+                        return []
+            order.reverse()
+            return order
+
+        def dfs(graph, index, visiting, visited, order):
+            visiting[index] = True
+            visited[index] = True
+            for neighbor in graph[index]:
                 if visiting[neighbor]:
                     return False
                 if not visited[neighbor]:
-                    if not dfs(graph, neighbor, order, visiting, visited):
+                    if not dfs(graph, neighbor, visiting, visited, order):
                         return False
-            order.append(i)
-            visiting[i] = False
+            order.append(index)
+            visiting[index] = False
             return True
 
-        order = []
-        visiting = [False] * numCourses
-        visited = [False] * numCourses
         graph = {}
         for i in range(numCourses):
             graph[i] = []
         for line in prerequisites:
             graph[line[1]].append(line[0])
-        for i in range(numCourses):
-            if not visited[i]:
-                if not dfs(graph, i, order, visiting, visited):
-                    return []
-        return list(reversed(order))
+        return topological_sort(graph, numCourses)

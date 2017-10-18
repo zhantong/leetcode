@@ -19,6 +19,7 @@ class Solution(object):
                 return low
 
             random.shuffle(nums)
+            #k -= 1
             low = 0
             high = len(nums) - 1
             while low < high:

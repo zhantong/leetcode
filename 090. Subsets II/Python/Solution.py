@@ -4,16 +4,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-
-        def subsets(nums, result, current, start):
-            result.append(current[:])
-            for i in range(start, len(nums)):
-                if i == start or nums[i] != nums[i - 1]:
-                    current.append(nums[i])
-                    subsets(nums, result, current, i + 1)
-                    current.pop()
-
+        result = [[]]
         nums.sort()
-        result = []
-        subsets(nums, result, [], 0)
+        last_start = 0
+        for i, num in enumerate(nums):
+            start = last_start if (i > 0 and nums[i] == nums[i - 1]) else 0
+            last_start = len(result)
+            for item in result[start:last_start]:
+                temp = item[:]
+                temp.append(num)
+                result.append(temp)
         return result

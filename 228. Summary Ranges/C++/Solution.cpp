@@ -1,12 +1,12 @@
 class Solution {
 public:
-    vector <string> summaryRanges(vector<int> &nums) {
+    vector<string> summaryRanges(vector<int> &nums) {
         if (nums.size() == 0) {
             return vector<string>();
         }
         int start = 0;
         long offset = nums[0];
-        vector <string> result;
+        vector<string> result;
         for (int i = 1; i < nums.size(); i++) {
             if (i + offset != nums[i]) {
                 if (start == i - 1) {

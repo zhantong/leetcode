@@ -20,22 +20,22 @@ public class Solution {
             }
             count += carry;
             switch (count) {
-                case 0:
-                    builder.append('0');
-                    carry = 0;
-                    break;
-                case 1:
-                    builder.append('1');
-                    carry = 0;
-                    break;
-                case 2:
-                    builder.append('0');
-                    carry = 1;
-                    break;
-                case 3:
-                    builder.append('1');
-                    carry = 1;
-                    break;
+            case 0:
+                builder.append('0');
+                carry = 0;
+                break;
+            case 1:
+                builder.append('1');
+                carry = 0;
+                break;
+            case 2:
+                builder.append(0);
+                carry = 1;
+                break;
+            case 3:
+                builder.append('1');
+                carry = 1;
+                break;
             }
         }
         return builder.reverse().toString();

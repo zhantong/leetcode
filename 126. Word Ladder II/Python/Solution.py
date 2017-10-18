@@ -33,13 +33,15 @@ class Solution(object):
                 for j in range(len(current)):
                     for letter in 'abcdefghijklmnopqrstuvwxyz':
                         temp = current[:j] + letter + current[j + 1:]
-                        if temp == endWord or temp in word_set:
+                        if temp == endWord:
                             if temp not in memory:
                                 memory[temp] = set()
                             memory[temp].add(current)
-                        if temp == endWord:
                             flag = True
                         elif temp in word_set:
+                            if temp not in memory:
+                                memory[temp] = set()
+                            memory[temp].add(current)
                             this_level.add(temp)
             for item in this_level:
                 word_set.remove(item)

@@ -19,14 +19,14 @@ public class Solution {
                     for (int right : rightVals) {
                         int current = 0;
                         switch (letter) {
-                            case '+':
-                                current = left + right;
-                                break;
-                            case '-':
-                                current = left - right;
-                                break;
-                            case '*':
-                                current = left * right;
+                        case '+':
+                            current = left + right;
+                            break;
+                        case '-':
+                            current = left - right;
+                            break;
+                        case '*':
+                            current = left * right;
                         }
                         result.add(current);
                     }

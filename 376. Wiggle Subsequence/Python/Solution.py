@@ -15,8 +15,18 @@ class Solution(object):
         result = 2
         prev = nums[i]
         for num in nums[i + 1:]:
-            if (is_increase and num > prev) or (not is_increase and num < prev):
-                result += 1
-                is_increase = not is_increase
-            prev = num
+            if is_increase:
+                if num > prev:
+                    result += 1
+                    prev = num
+                    is_increase = False
+                elif num < prev:
+                    prev = num
+            else:
+                if num < prev:
+                    result += 1
+                    prev = num
+                    is_increase = True
+                elif num > prev:
+                    prev = num
         return result

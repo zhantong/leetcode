@@ -21,22 +21,22 @@ public:
             }
             count += carry;
             switch (count) {
-                case 0:
-                    result.append("0");
-                    carry = 0;
-                    break;
-                case 1:
-                    result.append("1");
-                    carry = 0;
-                    break;
-                case 2:
-                    result.append("0");
-                    carry = 1;
-                    break;
-                case 3:
-                    result.append("1");
-                    carry = 1;
-                    break;
+            case 0:
+                result.append("0");
+                carry = 0;
+                break;
+            case 1:
+                result.append("1");
+                carry = 0;
+                break;
+            case 2:
+                result.append("0");
+                carry = 1;
+                break;
+            case 3:
+                result.append("1");
+                carry = 1;
+                break;
             }
         }
         reverse(result.begin(), result.end());

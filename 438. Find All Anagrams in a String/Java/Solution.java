@@ -1,36 +1,30 @@
 public class Solution {
     public List<Integer> findAnagrams(String s, String p) {
-        List<Integer> result = new ArrayList<>();
-        Map<Character, Integer> patternDict = new HashMap<>();
-        for (char item : p.toCharArray()) {
-            if (!patternDict.containsKey(item)) {
-                patternDict.put(item, 0);
-            }
-            patternDict.put(item, patternDict.get(item) + 1);
+        List<Integer> list = new ArrayList<>();
+        if (s == null || s.length() == 0 || p == null || p.length() == 0)
+            return list;
+        int[] hash = new int[256];
+        for (char c : p.toCharArray()) {
+            hash[c]++;
         }
-        int pLength = p.length();
-        int falseAlarm = 0;
-        int matchCount = p.length();
-        for (int right = 0; right < s.length(); right++) {
-            int left = right - pLength;
-            if (left >= 0 && patternDict.containsKey(s.charAt(left))) {
-                if (patternDict.get(s.charAt(left)) == -1) {
-                    falseAlarm--;
-                }
-                patternDict.put(s.charAt(left), patternDict.get(s.charAt(left)) + 1);
-                matchCount++;
+        int left = 0, right = 0, count = p.length();
+        while (right < s.length()) {
+            if (hash[s.charAt(right)] >= 1) {
+                count--;
             }
-            if (patternDict.containsKey(s.charAt(right))) {
-                if (patternDict.get(s.charAt(right)) == 0) {
-                    falseAlarm++;
+            hash[s.charAt(right)]--;
+            right++;
+            if (count == 0) {
+                list.add(left);
+            }
+            if (right - left == p.length()) {
+                if (hash[s.charAt(left)] >= 0) {
+                    count++;
                 }
-                patternDict.put(s.charAt(right), patternDict.get(s.charAt(right)) - 1);
-                matchCount -= 1;
-                if (matchCount == 0 && falseAlarm == 0) {
-                    result.add(left + 1);
-                }
+                hash[s.charAt(left)]++;
+                left++;
             }
         }
-        return result;
+        return list;
     }
 }

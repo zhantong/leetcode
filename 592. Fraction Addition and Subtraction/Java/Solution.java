@@ -9,7 +9,7 @@ class Solution {
                 String[] partsA = a.split("/");
                 String[] partsB = b.split("/");
                 int up = Integer.parseInt(partsA[0]) * Integer.parseInt(partsB[1])
-                        + Integer.parseInt(partsA[1]) * Integer.parseInt(partsB[0]);
+                         + Integer.parseInt(partsA[1]) * Integer.parseInt(partsB[0]);
                 int down = Integer.parseInt(partsA[1]) * Integer.parseInt(partsB[1]);
                 String sign = "";
                 if (up < 0) {

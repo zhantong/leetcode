@@ -11,7 +11,7 @@ class Solution {
 public:
     TreeNode *convertBST(TreeNode *root) {
         TreeNode *originRoot = root;
-        stack < TreeNode * > sta;
+        stack<TreeNode *> sta;
         int current = 0;
         while (root != nullptr || !sta.empty()) {
             if (root != nullptr) {

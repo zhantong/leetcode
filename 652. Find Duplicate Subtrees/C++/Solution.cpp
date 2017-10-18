@@ -30,7 +30,7 @@ public:
             }
         };
         Utils utils;
-        vector < TreeNode * > result;
+        vector<TreeNode *> result;
         unordered_map<string, int> memory;
         utils.duplicate(root, memory, result);
         return result;

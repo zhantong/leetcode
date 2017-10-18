@@ -6,31 +6,19 @@ class Solution(object):
         :rtype: bool
         """
 
-        def to_key(choosed):
-            result = 1
-            for item in choosed:
-                result <<= 1
-                if item:
-                    result |= 1
-            return result
-
         def win(choosed, memory, total):
-            key = to_key(choosed)
-            if key in memory:
-                return memory[key]
-            for i in range(1, len(choosed)):
-                if not choosed[i]:
-                    choosed[i] = True
-                    if total <= i or not win(choosed, memory, total - i):
-                        memory[key] = True
-                        choosed[i] = False
+            if choosed in memory:
+                return memory[choosed]
+            for i in range(1, maxChoosableInteger + 1):
+                if choosed & 1 << i == 0:
+                    if total <= i or not win(choosed | 1 << i, memory, total - i):
+                        memory[choosed] = True
                         return True
-                    choosed[i] = False
-            memory[key] = False
+            memory[choosed] = False
             return False
 
         if desiredTotal == 0:
             return True
         if (1 + maxChoosableInteger) * maxChoosableInteger // 2 < desiredTotal:
             return False
-        return win([False] * (maxChoosableInteger + 1), {}, desiredTotal)
+        return win(0, {}, desiredTotal)

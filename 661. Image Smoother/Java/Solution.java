@@ -6,7 +6,7 @@ class Solution {
         int m = M.length;
         int n = M[0].length;
         int[][] result = new int[m][n];
-        int[] range = new int[]{-1, 0, 1};
+        int[] range = new int[] {-1, 0, 1};
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 int current = 0;

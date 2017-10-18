@@ -1,7 +1,7 @@
 class Solution {
 public:
-    unordered_map <string, string> short2long;
-    unordered_map <string, string> long2short;
+    unordered_map<string, string> short2long;
+    unordered_map<string, string> long2short;
 
     string generate(int n) {
         string pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

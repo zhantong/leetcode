@@ -39,7 +39,7 @@ class Solution {
                 int mid = (low + high) / 2;
                 int count = mergeSort(array, tempArray, low, mid) + mergeSort(array, tempArray, mid + 1, high);
                 for (int i = low, j = mid + 1; i <= mid; i++) {
-                    while (j <= high && array[i] / 2.0 > array[j]) {
+                    while (j <= high && nums[i] / 2.0 > nums[j]) {
                         j++;
                     }
                     count += j - (mid + 1);

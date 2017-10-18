@@ -9,10 +9,10 @@
  */
 class Solution {
 public:
-    vector <vector<int>> pathSum(TreeNode *root, int sum) {
+    vector<vector<int>> pathSum(TreeNode *root, int sum) {
         class Utils {
         public:
-            void dfs(TreeNode *root, int sum, vector <vector<int>> &result, vector<int> &current) {
+            void dfs(TreeNode *root, int sum, vector<vector<int>> &result, vector<int> &current) {
                 current.push_back(root->val);
                 sum -= root->val;
                 if (sum == 0) {
@@ -29,7 +29,7 @@ public:
                 current.pop_back();
             }
         };
-        vector <vector<int>> result;
+        vector<vector<int>> result;
         if (root == nullptr) {
             return result;
         }

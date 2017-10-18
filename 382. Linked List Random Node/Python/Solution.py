@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution(object):
     def __init__(self, head):
         """
@@ -29,7 +30,6 @@ class Solution(object):
         return result
 
 
-
-        # Your Solution object will be instantiated and called as such:
-        # obj = Solution(head)
-        # param_1 = obj.getRandom()
+# Your Solution object will be instantiated and called as such:
+# obj = Solution(head)
+# param_1 = obj.getRandom()

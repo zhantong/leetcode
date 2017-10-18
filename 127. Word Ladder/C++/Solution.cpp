@@ -1,9 +1,9 @@
 class Solution {
 public:
-    int ladderLength(string beginWord, string endWord, vector <string> &wordList) {
-        queue <string> que;
+    int ladderLength(string beginWord, string endWord, vector<string> &wordList) {
+        queue<string> que;
         que.push(beginWord);
-        unordered_set <string> set(wordList.begin(), wordList.end());
+        unordered_set<string> set(wordList.begin(), wordList.end());
         int count = 0;
         while (!que.empty()) {
             int size = que.size();

@@ -13,10 +13,10 @@ public:
     }
 
     /** Build a dictionary through a list of words */
-    void buildDict(vector <string> dict) {
-        for (auto &word:dict) {
+    void buildDict(vector<string> dict) {
+        for (auto &word : dict) {
             TrieNode *current = root;
-            for (auto letter:word) {
+            for (auto letter : word) {
                 int index = letter - 'a';
                 if (current->children[index] == nullptr) {
                     current->children[index] = new TrieNode();

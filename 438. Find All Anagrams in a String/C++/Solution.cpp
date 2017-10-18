@@ -3,7 +3,7 @@ public:
     vector<int> findAnagrams(string s, string p) {
         vector<int> result;
         map<char, int> patternDict;
-        for (char item:p) {
+        for (char item : p) {
             if (patternDict.find(item) == patternDict.end()) {
                 patternDict[item] = 0;
             }

@@ -9,10 +9,10 @@
  */
 class Solution {
 public:
-    vector <string> binaryTreePaths(TreeNode *root) {
+    vector<string> binaryTreePaths(TreeNode *root) {
         class Utils {
         public:
-            void paths(TreeNode *root, string path, vector <string> &result) {
+            void paths(TreeNode *root, string path, vector<string> &result) {
                 if (root->left == nullptr && root->right == nullptr) {
                     result.push_back(path + to_string(root->val));
                 }
@@ -24,7 +24,7 @@ public:
                 }
             }
         };
-        vector <string> result;
+        vector<string> result;
         if (root) {
             Utils utils;
             utils.paths(root, "", result);

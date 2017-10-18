@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int findLUSlength(vector <string> &strs) {
+    int findLUSlength(vector<string> &strs) {
         class Utils {
         public:
             bool isSubsequence(string a, string b) {

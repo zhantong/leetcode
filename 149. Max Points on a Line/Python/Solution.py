@@ -4,6 +4,7 @@
 #         self.x = a
 #         self.y = b
 
+
 class Solution(object):
     def maxPoints(self, points):
         """

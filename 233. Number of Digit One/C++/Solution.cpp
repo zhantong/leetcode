@@ -4,8 +4,8 @@ public:
         int result = 0;
         long times = 1;
         while (times <= n) {
-            int a = (int) (n / times);
-            int b = (int) (n % times);
+            int a = (int)(n / times);
+            int b = (int)(n % times);
             if (a % 10 == 0) {
                 result += a / 10 * times;
             } else if (a % 10 == 1) {

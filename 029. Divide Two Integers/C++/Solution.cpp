@@ -18,8 +18,8 @@ public:
             }
         }
         if (sign) {
-            return (int) min(result, (long) INT_MAX);
+            return (int) min(result, (long)INT_MAX);
         }
-        return (int) max(-result, (long) INT_MIN);
+        return (int) max(-result, (long)INT_MIN);
     }
 };

@@ -1,8 +1,8 @@
 public class Solution {
     public int divide(int dividend, int divisor) {
         boolean sign = (dividend > 0) == (divisor > 0);
-        long longDivisor = Math.abs((long) divisor);
-        long a = Math.abs((long) dividend);
+        long longDivisor = Math.abs((long)divisor);
+        long a = Math.abs((long)dividend);
         long b = longDivisor;
         long result = 0;
         int current = 1;

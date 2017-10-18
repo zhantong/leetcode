@@ -11,6 +11,8 @@ class AllOne(object):
         """
         self.keys = {}
         self.times = {}
+        self.max_time = 0
+        self.min_time = sys.maxsize
         self.head = self.Node()
         self.tail = self.Node()
         self.head.next = self.tail
@@ -99,10 +101,9 @@ class AllOne(object):
         return next(iter(self.tail.prev.keys))
 
 
-
-        # Your AllOne object will be instantiated and called as such:
-        # obj = AllOne()
-        # obj.inc(key)
-        # obj.dec(key)
-        # param_3 = obj.getMaxKey()
-        # param_4 = obj.getMinKey()
+# Your AllOne object will be instantiated and called as such:
+# obj = AllOne()
+# obj.inc(key)
+# obj.dec(key)
+# param_3 = obj.getMaxKey()
+# param_4 = obj.getMinKey()

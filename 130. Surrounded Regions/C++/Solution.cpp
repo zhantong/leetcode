@@ -1,28 +1,30 @@
 class Solution {
 public:
-    void solve(vector <vector<char>> &board) {
+    void solve(vector<vector<char>> &board) {
         class Utils {
         public:
-            void dfs(vector <vector<char>> &board, int i, int j) {
+            void dfs(vector<vector<char>> &board, int i, int j) {
                 if (i < 0 || j < 0 || i >= board.size() || j >= board[0].size()) {
                     return;
                 }
                 board[i][j] = '1';
+
                 if (i > 1 && board[i - 1][j] == 'O') {
                     dfs(board, i - 1, j);
                 }
-                if (i < board.size() - 2 && board[i + 1][j] == 'O') {
+                if (i < (int)(board.size() - 2) && board[i + 1][j] == 'O') {
                     dfs(board, i + 1, j);
                 }
                 if (j > 1 && board[i][j - 1] == 'O') {
                     dfs(board, i, j - 1);
                 }
-                if (j < board[0].size() - 2 && board[i][j + 1] == 'O') {
+                if (j < (int)(board[0].size() - 2) && board[i][j + 1] == 'O') {
                     dfs(board, i, j + 1);
                 }
+
             }
         };
-        if (board.size() == 0) {
+        if (board.empty()) {
             return;
         }
         Utils utils;

@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int calPoints(vector <string> &ops) {
+    int calPoints(vector<string> &ops) {
         vector<int> history;
         for (auto &op : ops) {
             if (op == "+") {

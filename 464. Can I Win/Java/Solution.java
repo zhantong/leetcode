@@ -1,34 +1,19 @@
-public class Solution {
+class Solution {
     public boolean canIWin(int maxChoosableInteger, int desiredTotal) {
         class Utils {
-            int toKey(boolean[] choosed) {
-                int result = 0;
-                for (boolean item : choosed) {
-                    result <<= 1;
-                    if (item) {
-                        result |= 1;
-                    }
+            boolean win(int choosed, Map<Integer, Boolean> memory, int total) {
+                if (memory.containsKey(choosed)) {
+                    return memory.get(choosed);
                 }
-                return result;
-            }
-
-            boolean win(boolean[] choosed, Map<Integer, Boolean> memory, int total) {
-                int key = toKey(choosed);
-                if (memory.containsKey(key)) {
-                    return memory.get(key);
-                }
-                for (int i = 1; i < choosed.length; i++) {
-                    if (!choosed[i]) {
-                        choosed[i] = true;
-                        if (total <= i || !win(choosed, memory, total - i)) {
-                            memory.put(key, true);
-                            choosed[i] = false;
+                for (int i = 1; i <= maxChoosableInteger; i++) {
+                    if ((choosed & (1 << i)) == 0) {
+                        if (total <= i || !win(choosed | (1 << i), memory, total - i)) {
+                            memory.put(choosed, true);
                             return true;
                         }
-                        choosed[i] = false;
                     }
                 }
-                memory.put(key, false);
+                memory.put(choosed, false);
                 return false;
             }
         }
@@ -39,6 +24,6 @@ public class Solution {
             return false;
         }
         Utils utils = new Utils();
-        return utils.win(new boolean[maxChoosableInteger + 1], new HashMap<>(), desiredTotal);
+        return utils.win(0, new HashMap<>(), desiredTotal);
     }
 }

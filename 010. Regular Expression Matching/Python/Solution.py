@@ -16,7 +16,8 @@ class Solution(object):
         for i in range(1, length_s + 1):
             for j in range(1, length_p + 1):
                 if p[j - 1] == '*':
-                    dp[i][j] = dp[i][j - 2] or ((p[j - 2] == s[i - 1] or p[j - 2] == '.') and dp[i - 1][j])
+                    dp[i][j] = dp[i][j - 2] or ((p[j - 2] == s[i - 1] or p[j - 2] == '.')
+                                                and dp[i - 1][j])
                 else:
                     dp[i][j] = dp[i - 1][j - 1] and (p[j - 1] == s[i - 1] or p[j - 1] == '.')
         return dp[length_s][length_p]

@@ -9,7 +9,7 @@ class Solution(object):
             got.add(n)
             sum = 0
             while n:
-                sum += (n % 10) ** 2
+                sum += (n % 10)**2
                 n //= 10
             n = sum
 

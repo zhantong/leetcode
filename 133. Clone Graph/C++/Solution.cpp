@@ -26,7 +26,7 @@ public:
             return node;
         }
         Utils utils;
-        unordered_map < int, UndirectedGraphNode * > memory;
+        unordered_map<int, UndirectedGraphNode *> memory;
         return utils.clone(node, memory);
     }
 };

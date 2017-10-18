@@ -6,12 +6,7 @@ class Solution(object):
         """
         first_got = set()
         second_got = set()
-        pattern = {
-            'A': 0,
-            'C': 1,
-            'G': 2,
-            'T': 3
-        }
+        pattern = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
         result = []
         for i in range(len(s) - 9):
             current = 0

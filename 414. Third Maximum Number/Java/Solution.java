@@ -11,7 +11,7 @@ public class Solution {
             } else if (num > second && num < first) {
                 third = second;
                 second = num;
-            } else if (num > third && num < second) {
+            } else if (num >= third && num < second) {
                 third = num;
             }
         }

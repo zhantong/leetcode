@@ -6,7 +6,7 @@ public:
         while (low < high) {
             int mid = (low + high) / 2;
             int count = 0;
-            for (int &num:nums) {
+            for (int &num : nums) {
                 if (num <= mid) {
                     count++;
                 }

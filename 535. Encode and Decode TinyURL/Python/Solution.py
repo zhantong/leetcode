@@ -29,6 +29,6 @@ class Codec:
         return self.short2long[shortUrl]
 
 
-        # Your Codec object will be instantiated and called as such:
-        # codec = Codec()
-        # codec.decode(codec.encode(url))
+# Your Codec object will be instantiated and called as such:
+# codec = Codec()
+# codec.decode(codec.encode(url))

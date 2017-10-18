@@ -16,6 +16,7 @@ class Solution:
                 if current == 0 and (i == 0 or (equation[i - 1] in ['+', '-', '='])):
                     current = 1
                 count_x += current * sign * is_reverse
+                print(count_x)
                 current = 0
             elif letter in ['+', '-', '=']:
                 const += current * sign * is_reverse * -1

@@ -1,9 +1,9 @@
 class Solution {
 public:
-    vector <vector<int>> combinationSum2(vector<int> &candidates, int target) {
+    vector<vector<int>> combinationSum2(vector<int> &candidates, int target) {
         class Utils {
         public:
-            void combination(vector<int> &candidates, int target, int start, vector <vector<int>> &result,
+            void combination(vector<int> &candidates, int target, int start, vector<vector<int>> &result,
                              vector<int> &current) {
                 if (target < 0) {
                     return;
@@ -21,7 +21,7 @@ public:
                 }
             }
         };
-        vector <vector<int>> result;
+        vector<vector<int>> result;
         sort(candidates.begin(), candidates.end());
         Utils utils;
         vector<int> temp;

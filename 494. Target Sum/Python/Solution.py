@@ -5,16 +5,21 @@ class Solution(object):
         :type S: int
         :rtype: int
         """
-        sum_nums = sum(nums)
-        if S > sum_nums or S < -sum_nums:
+        if S > 1000:
             return 0
-        map = [0] * (2 * sum_nums + 1)
-        map[sum_nums] = 1
-        for num in nums:
-            new_map = [0] * (2 * sum_nums + 1)
-            for i in range(2 * sum_nums + 1):
-                if map[i]:
-                    new_map[i + num] += map[i]
-                    new_map[i - num] += map[i]
-            map = new_map
-        return map[sum_nums + S]
+        memory = {}
+        memory[nums[0]] = 1
+        memory[-nums[0]] = 1 if nums[0] != 0 else 2
+        for num in nums[1:]:
+            new_memory = {}
+            for key, value in memory.items():
+                if key + num not in new_memory:
+                    new_memory[key + num] = 0
+                new_memory[key + num] += value
+                if key - num not in new_memory:
+                    new_memory[key - num] = 0
+                new_memory[key - num] += value
+            memory = new_memory
+        if S not in memory:
+            return 0
+        return memory[S]

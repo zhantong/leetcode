@@ -14,6 +14,6 @@ public class Solution {
                 miss = i + 1;
             }
         }
-        return new int[]{duplicate, miss};
+        return new int[] {duplicate, miss};
     }
 }

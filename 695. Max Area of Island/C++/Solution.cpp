@@ -1,14 +1,15 @@
 class Solution {
 public:
-    int maxAreaOfIsland(vector <vector<int>> &grid) {
+    int maxAreaOfIsland(vector<vector<int>> &grid) {
         class Utils {
         public:
             int steps[4][2] = {{-1, 0},
-                               {1,  0},
-                               {0,  -1},
-                               {0,  1}};
+                {1,  0},
+                {0,  -1},
+                {0,  1}
+            };
 
-            int dfs(vector <vector<int>> &grid, int x, int y) {
+            int dfs(vector<vector<int>> &grid, int x, int y) {
                 if (x < 0 || x >= grid.size() || y < 0 || y >= grid[0].size() || grid[x][y] == 0) {
                     return 0;
                 }

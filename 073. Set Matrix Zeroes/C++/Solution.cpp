@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void setZeroes(vector <vector<int>> &matrix) {
+    void setZeroes(vector<vector<int>> &matrix) {
         bool isFirstRowContains0 = false;
         bool isFirstColContains0 = false;
         int m = matrix.size();

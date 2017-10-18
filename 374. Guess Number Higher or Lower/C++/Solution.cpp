@@ -9,7 +9,7 @@ public:
         long low = 1;
         long high = n;
         while (low <= high) {
-            int mid = (int) ((low + high) / 2);
+            int mid = (int)((low + high) / 2);
             int guessResult = guess(mid);
             if (guessResult == 0) {
                 return mid;
