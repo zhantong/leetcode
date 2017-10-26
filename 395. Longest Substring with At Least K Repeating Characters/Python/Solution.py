@@ -5,7 +5,6 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-
         def substring(s, k, start, end):
             if start >= end:
                 return 0

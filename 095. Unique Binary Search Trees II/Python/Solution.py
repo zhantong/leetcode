@@ -12,7 +12,6 @@ class Solution(object):
         :type n: int
         :rtype: List[TreeNode]
         """
-
         def generate(start, end):
             result = []
             if start > end:

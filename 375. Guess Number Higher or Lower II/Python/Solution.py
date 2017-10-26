@@ -4,7 +4,6 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-
         def get_money(start, end, memory):
             if start >= end:
                 return 0

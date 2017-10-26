@@ -4,7 +4,6 @@ class Solution(object):
         :type s: str
         :rtype: List[List[str]]
         """
-
         def is_palindrome(str):
             i = 0
             j = len(str) - 1

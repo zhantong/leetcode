@@ -16,7 +16,6 @@ class Solution:
                 for neighbor in node.neighbors:
                     copy.neighbors.append(clone(neighbor, memory))
             return memory[node.label]
-
         if not node:
             return node
         memory = {}

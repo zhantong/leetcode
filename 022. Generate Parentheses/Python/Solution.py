@@ -4,7 +4,6 @@ class Solution(object):
         :type n: int
         :rtype: List[str]
         """
-
         def parenthesis(result, current, left, right):
             if left == 0 and right == 0:
                 result.append(current)

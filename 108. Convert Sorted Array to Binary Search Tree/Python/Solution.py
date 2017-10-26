@@ -12,7 +12,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: TreeNode
         """
-
         def to_bst(nums, start, end):
             if start > end:
                 return None

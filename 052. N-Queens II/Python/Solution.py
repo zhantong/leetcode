@@ -4,7 +4,6 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-
         def back_trace(board, row_index, result):
             if row_index == len(board):
                 result += 1

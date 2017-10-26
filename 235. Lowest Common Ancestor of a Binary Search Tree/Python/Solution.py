@@ -15,9 +15,8 @@ class Solution(object):
         :rtype: TreeNode
         """
         while root:
-            if (p.val < root.val
-                    and q.val > root.val) or (p.val > root.val and q.val < root.val) or (
-                        p.val == root.val) or (q.val == root.val):
+            if (p.val < root.val and q.val > root.val) or (p.val > root.val and q.val < root.val) or (
+                    p.val == root.val) or (q.val == root.val):
                 return root
             if p.val < root.val and q.val < root.val:
                 root = root.left

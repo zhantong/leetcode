@@ -4,7 +4,6 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-
         def reverse(s, i, j):
             while i < j:
                 s[i], s[j] = s[j], s[i]

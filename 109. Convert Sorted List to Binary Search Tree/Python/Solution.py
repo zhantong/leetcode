@@ -18,7 +18,6 @@ class Solution(object):
         :type head: ListNode
         :rtype: TreeNode
         """
-
         def toBST(head, tail):
             if head == tail:
                 return None

@@ -4,7 +4,6 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-
         def left_to_right(n):
             if n == 1:
                 return n

@@ -4,7 +4,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-
         def kth_largest(nums, k):
             def partition(nums, low, high):
                 pivot = nums[low]

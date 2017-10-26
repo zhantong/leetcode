@@ -4,7 +4,6 @@ class Solution(object):
         :type n: int
         :rtype: List[int]
         """
-
         def dfs(result, current, n):
             if current > n:
                 return

@@ -1,4 +1,5 @@
 class NumArray(object):
+
     def __init__(self, nums):
         """
         :type nums: List[int]

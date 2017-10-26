@@ -4,7 +4,6 @@ class Solution(object):
         :type strs: List[str]
         :rtype: int
         """
-
         def is_subsequence(a, b):
             i = 0
             for letter in b:

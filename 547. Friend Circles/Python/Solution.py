@@ -4,7 +4,6 @@ class Solution(object):
         :type M: List[List[int]]
         :rtype: int
         """
-
         class UnionFind:
             def __init__(self, n):
                 self.count = n

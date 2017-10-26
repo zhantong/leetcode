@@ -11,7 +11,6 @@ class Solution(object):
         :type lists: List[ListNode]
         :rtype: ListNode
         """
-
         def partition(lists, start, end):
             if start == end:
                 return lists[start]

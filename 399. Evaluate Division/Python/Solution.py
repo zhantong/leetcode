@@ -6,7 +6,6 @@ class Solution(object):
         :type queries: List[List[str]]
         :rtype: List[float]
         """
-
         def dfs(start, end, graph, graph_value, current, current_value):
             if start in current or start not in graph:
                 return 0.0

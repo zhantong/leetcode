@@ -4,7 +4,6 @@ class Solution(object):
         :type matrix: List[List[int]]
         :rtype: int
         """
-
         def dfs(matrix, i, j, m, n, prev, memory):
             if i < 0 or i >= m or j < 0 or j >= n or matrix[i][j] >= prev:
                 return 0

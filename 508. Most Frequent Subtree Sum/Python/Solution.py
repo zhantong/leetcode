@@ -12,7 +12,6 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-
         def tree_sum(root, sum_nodes, max_freq):
             if not root:
                 return 0, max_freq

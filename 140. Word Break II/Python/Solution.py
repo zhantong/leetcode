@@ -5,7 +5,6 @@ class Solution(object):
         :type wordDict: List[str]
         :rtype: List[str]
         """
-
         def back_trace(s, word_dict, current, result, memory):
             if not s:
                 result.append(' '.join(current))

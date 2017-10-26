@@ -5,7 +5,6 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-
         def kth_largest(nums, start, end, k):
             pivot = nums[end]
             left = start

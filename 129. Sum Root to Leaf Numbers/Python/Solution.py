@@ -12,7 +12,6 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-
         def numbers(root, prev_sum):
             if not root:
                 return 0

@@ -4,7 +4,6 @@ class Solution(object):
         :type board: List[List[str]]
         :rtype: void Do not return anything, modify board in-place instead.
         """
-
         def sudoku(board, pos):
             if pos == 81:
                 return True

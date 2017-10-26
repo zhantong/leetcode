@@ -5,7 +5,6 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
-
         def combination(candidates, result, current, start, left):
             if left == 0:
                 result.append(current[:])

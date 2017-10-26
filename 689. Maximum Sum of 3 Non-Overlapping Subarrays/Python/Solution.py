@@ -33,11 +33,8 @@ class Solution:
         for i in range(k, length - 2 * k + 1):
             left = index_left[i - 1]
             right = index_right[i + k]
-            current_max = left_sums[left +
-                                    k] - left_sums[left] + left_sums[i +
-                                                                     k] - left_sums[i] + left_sums[right
-                                                                                                   +
-                                                                                                   k] - left_sums[right]
+            current_max = left_sums[left + k] - left_sums[left] + left_sums[i + k] - left_sums[i] + left_sums[
+                right + k] - left_sums[right]
             if current_max > the_max:
                 result = [left, i, right]
                 the_max = current_max

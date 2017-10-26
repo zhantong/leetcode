@@ -4,16 +4,29 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        stack = []
+        left = 0
+        right = 0
         result = 0
-        left = -1
-        for i, letter in enumerate(s):
-            if letter == '(':
-                stack.append(i)
+        for item in s:
+            if item == '(':
+                left += 1
             else:
-                if not stack:
-                    left = i
-                else:
-                    stack.pop()
-                    result = max(result, i - (stack[-1] if stack else left))
+                right += 1
+            if left == right:
+                result = max(result, left + right)
+            elif left < right:
+                left = 0
+                right = 0
+        left = 0
+        right = 0
+        for item in reversed(s):
+            if item == '(':
+                left += 1
+            else:
+                right += 1
+            if left == right:
+                result = max(result, left + right)
+            elif left > right:
+                left = 0
+                right = 0
         return result

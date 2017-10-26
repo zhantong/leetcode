@@ -12,7 +12,6 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-
         def balanced(root):
             if not root:
                 return 0

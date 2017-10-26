@@ -4,5 +4,4 @@ class Solution:
         :type moves: str
         :rtype: bool
         """
-        return len(moves) % 2 == 0 and moves.count('U') == moves.count('D') and moves.count(
-            'L') == moves.count('R')
+        return len(moves) % 2 == 0 and moves.count('U') == moves.count('D') and moves.count('L') == moves.count('R')

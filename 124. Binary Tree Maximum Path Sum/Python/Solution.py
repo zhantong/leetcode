@@ -12,7 +12,6 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-
         def path_sum(root, result):
             if not root:
                 return (0, result)

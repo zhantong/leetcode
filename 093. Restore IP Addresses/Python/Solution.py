@@ -4,7 +4,6 @@ class Solution(object):
         :type s: str
         :rtype: List[str]
         """
-
         def back_trace(s, result, current, index, count):
             if count > 4:
                 return

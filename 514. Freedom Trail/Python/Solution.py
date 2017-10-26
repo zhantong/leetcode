@@ -18,6 +18,6 @@ class Solution(object):
                 for i in index_same[key[key_index]]:
                     clock_step = abs(ring_index - i)
                     min_step = min(clock_step, ring_length - clock_step)
-                    dp[key_index][ring_index] = min(dp[key_index][ring_index],
-                                                    min_step + dp[key_index + 1][i])
+                    dp[key_index][ring_index] = min(
+                        dp[key_index][ring_index], min_step + dp[key_index + 1][i])
         return dp[0][0] + key_length

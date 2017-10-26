@@ -4,7 +4,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-
         def subsequences(nums, result, current, start):
             if len(current) >= 2:
                 result.add(tuple(current[:]))

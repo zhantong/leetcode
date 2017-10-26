@@ -12,7 +12,6 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[str]
         """
-
         def paths(root, path, result):
             if root.left is None and root.right is None:
                 result.append(path + str(root.val))

@@ -5,7 +5,6 @@ class Solution(object):
         :type target: int
         :rtype: List[str]
         """
-
         def back_trace(num, target, i, current, result, value, prev):
             if i == len(num):
                 if value == target:
@@ -19,12 +18,12 @@ class Solution(object):
                 if i == 0:
                     back_trace(num, target, j + 1, now_in_str, result, now_in_int, now_in_int)
                 else:
-                    back_trace(num, target, j + 1, current + '+' + now_in_str, result,
-                               value + now_in_int, now_in_int)
-                    back_trace(num, target, j + 1, current + '-' + now_in_str, result,
-                               value - now_in_int, -now_in_int)
-                    back_trace(num, target, j + 1, current + '*' + now_in_str, result,
-                               value - prev + prev * now_in_int, prev * now_in_int)
+                    back_trace(num, target, j + 1, current + '+' + now_in_str,
+                               result, value + now_in_int, now_in_int)
+                    back_trace(num, target, j + 1, current + '-' + now_in_str,
+                               result, value - now_in_int, -now_in_int)
+                    back_trace(num, target, j + 1, current + '*' + now_in_str, result, value - prev + prev * now_in_int,
+                               prev * now_in_int)
 
         result = []
         back_trace(num, target, 0, '', result, 0, 0)

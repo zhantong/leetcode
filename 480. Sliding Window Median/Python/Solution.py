@@ -16,8 +16,8 @@ class Solution(object):
             heapq.heappop(max_heap)
         for i in range(k, len(nums)):
             num = nums[i]
-            result.append(min_heap[0][0] / 1.0
-                          if k % 2 else (min_heap[0][0] - max_heap[0][0]) / 2.0)
+            result.append(min_heap[0][0] / 1.0 if k %
+                          2 else (min_heap[0][0] - max_heap[0][0]) / 2.0)
             if num >= min_heap[0][0]:
                 heapq.heappush(min_heap, (num, i))
                 if nums[i - k] <= min_heap[0][0]:

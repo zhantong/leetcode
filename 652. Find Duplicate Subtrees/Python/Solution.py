@@ -8,8 +8,8 @@ class Solution:
         def duplicate(root, memory, result):
             if not root:
                 return '#'
-            key = duplicate(root.left, memory, result) + ',' + duplicate(
-                root.right, memory, result) + ',' + str(root.val)
+            key = duplicate(root.left, memory, result) + ',' + \
+                duplicate(root.right, memory, result) + ',' + str(root.val)
             if key not in memory:
                 memory[key] = 0
             if memory[key] == 1:

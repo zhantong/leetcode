@@ -5,7 +5,6 @@ class Solution(object):
         :type m: int
         :rtype: int
         """
-
         def cut(nums, mid, m):
             count = 1
             current_sum = 0

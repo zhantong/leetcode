@@ -12,7 +12,6 @@ class Solution(object):
             for left in range(length - gap):
                 right = left + gap
                 for i in range(left + 1, right):
-                    dp[left][right] = max(
-                        dp[left][right],
-                        nums[left] * nums[i] * nums[right] + dp[left][i] + dp[i][right])
+                    dp[left][right] = max(dp[left][right],
+                                          nums[left] * nums[i] * nums[right] + dp[left][i] + dp[i][right])
         return dp[0][-1]

@@ -5,12 +5,10 @@ class Solution(object):
         :type word: str
         :rtype: bool
         """
-
         def exist(board, word, i, j, index):
             if index == len(word):
                 return True
-            if i < 0 or j < 0 or i >= len(board) or j >= len(
-                    board[0]) or board[i][j] != word[index]:
+            if i < 0 or j < 0 or i >= len(board) or j >= len(board[0]) or board[i][j] != word[index]:
                 return False
             temp = board[i][j]
             board[i][j] = '0'

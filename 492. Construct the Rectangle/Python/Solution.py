@@ -4,7 +4,7 @@ class Solution(object):
         :type area: int
         :rtype: List[int]
         """
-        x = int(math.ceil(area**0.5))
+        x = int(math.ceil(area ** 0.5))
         while area % x != 0:
             x += 1
         y = int(area / x)

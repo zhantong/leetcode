@@ -35,9 +35,8 @@ class Solution:
                         break
                     new_needs_array[i] -= special[i]
                 if can_fit:
-                    result = min(
-                        result,
-                        special[-1] + trace(prices, specials, to_key(new_needs_array), memory))
+                    result = min(result, special[-1] + trace(prices,
+                                                             specials, to_key(new_needs_array), memory))
             memory[needs_key] = result
             return result
 

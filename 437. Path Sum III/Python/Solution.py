@@ -13,7 +13,6 @@ class Solution(object):
         :type sum: int
         :rtype: int
         """
-
         def path(root, check_list):
             if root is None:
                 return 0

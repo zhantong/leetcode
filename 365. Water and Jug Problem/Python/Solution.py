@@ -6,7 +6,6 @@ class Solution(object):
         :type z: int
         :rtype: bool
         """
-
         def gcd(x, y):
             while y:
                 x, y = y, x % y

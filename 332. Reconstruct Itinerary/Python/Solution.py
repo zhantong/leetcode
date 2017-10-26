@@ -4,7 +4,6 @@ class Solution(object):
         :type tickets: List[List[str]]
         :rtype: List[str]
         """
-
         def dfs(travels, result, start, length):
             result.append(start)
             if start not in travels or not travels[start]:

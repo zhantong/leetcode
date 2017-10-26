@@ -6,4 +6,4 @@ class Solution(object):
         """
         if n <= 0:
             return False
-        return (3**19) % n == 0
+        return (3 ** 19) % n == 0

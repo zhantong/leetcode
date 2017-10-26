@@ -4,7 +4,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-
         class Node:
             def __init__(self, value):
                 self.value = value

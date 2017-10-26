@@ -18,8 +18,7 @@ class Solution(object):
         elif index < length and str[index] == '+':
             index += 1
         while index < length and str[index] >= '0' and str[index] <= '9':
-            if result > INT_MAX // 10 or (result == INT_MAX // 10
-                                          and ord(str[index]) - ord('0') > 7):
+            if result > INT_MAX // 10 or (result == INT_MAX // 10 and ord(str[index]) - ord('0') > 7):
                 if sign > 0:
                     return INT_MAX
                 else:

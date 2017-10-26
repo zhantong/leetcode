@@ -6,7 +6,6 @@ class Solution(object):
         :type wordList: List[str]
         :rtype: List[List[str]]
         """
-
         def back_trace(memory, current, result, word):
             if word not in memory:
                 result.append(current[::-1])

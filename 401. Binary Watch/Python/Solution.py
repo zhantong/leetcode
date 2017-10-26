@@ -4,7 +4,6 @@ class Solution(object):
         :type num: int
         :rtype: List[str]
         """
-
         def get_combination(length, num_ones, base, pool):
             if num_ones == 0:
                 pool.append(base)

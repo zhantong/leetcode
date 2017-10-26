@@ -25,6 +25,7 @@
 
 
 class NestedIterator(object):
+
     def __init__(self, nestedList):
         """
         Initialize your data structure here.

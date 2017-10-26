@@ -4,7 +4,6 @@ class Solution(object):
         :type board: List[List[str]]
         :rtype: void Do not return anything, modify board in-place instead.
         """
-
         def dfs(board, i, j):
             if i < 0 or j < 0 or i >= len(board) or j >= len(board[0]):
                 return
@@ -17,7 +16,6 @@ class Solution(object):
                 dfs(board, i, j - 1)
             if j < len(board[0]) - 1 and board[i][j + 1] == 'O':
                 dfs(board, i, j + 1)
-
         if not board:
             return
         m = len(board)

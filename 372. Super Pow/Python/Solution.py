@@ -5,7 +5,6 @@ class Solution(object):
         :type b: List[int]
         :rtype: int
         """
-
         def pow(a, n, base):
             result = 1
             for _ in range(n):

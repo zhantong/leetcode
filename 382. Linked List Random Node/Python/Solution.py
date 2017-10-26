@@ -6,6 +6,7 @@
 
 
 class Solution(object):
+
     def __init__(self, head):
         """
         @param head The linked list's head.

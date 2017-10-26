@@ -25,5 +25,5 @@ class Solution(object):
             depth_right += 1
             node_right = node_right.right
         if depth_left == depth_right:
-            return 2**depth_left - 1
+            return 2 ** depth_left - 1
         return 1 + self.countNodes(root.left) + self.countNodes(root.right)

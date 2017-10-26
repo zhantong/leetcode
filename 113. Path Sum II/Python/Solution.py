@@ -13,7 +13,6 @@ class Solution(object):
         :type sum: int
         :rtype: List[List[int]]
         """
-
         def dfs(root, sum, result, current):
             current.append(root.val)
             sum -= root.val

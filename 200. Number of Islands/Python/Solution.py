@@ -13,7 +13,6 @@ class Solution(object):
             dfs(grid, i + 1, j, m, n)
             dfs(grid, i, j - 1, m, n)
             dfs(grid, i, j + 1, m, n)
-
         if not grid:
             return 0
         result = 0

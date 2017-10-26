@@ -12,9 +12,6 @@ class Solution(object):
                 right = word[j:]
                 if right[::-1] in words_set and words_set[right[::-1]] != i and left == left[::-1]:
                     result.append([words_set[right[::-1]], i])
-                if left[::
-                        -1] in words_set and words_set[left[::
-                                                            -1]] != i and right == right[::
-                                                                                         -1] and right:
+                if left[::-1] in words_set and words_set[left[::-1]] != i and right == right[::-1] and right:
                     result.append([i, words_set[left[::-1]]])
         return result

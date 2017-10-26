@@ -11,7 +11,6 @@ class Solution(object):
         :type points: List[Point]
         :rtype: int
         """
-
         def transform(a, b):
             def gcd(a, b):
                 while b:

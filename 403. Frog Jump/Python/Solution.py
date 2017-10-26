@@ -4,7 +4,6 @@ class Solution(object):
         :type stones: List[int]
         :rtype: bool
         """
-
         def back_trace(stones, current, length, memory):
             key = (current << 32) | length
             if key in memory:

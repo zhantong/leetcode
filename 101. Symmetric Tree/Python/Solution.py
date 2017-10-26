@@ -12,7 +12,6 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-
         def symmetric(left, right):
             if not left and not right:
                 return True
