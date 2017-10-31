@@ -1,4 +1,4 @@
-public class Solution {
+class Solution {
     public int distributeCandies(int[] candies) {
         Set<Integer> nums = new HashSet<>();
         for (int candy : candies) {
@@ -6,9 +6,6 @@ public class Solution {
         }
         int numNums = nums.size();
         int numTarget = candies.length / 2;
-        if (numNums >= numTarget) {
-            return numTarget;
-        }
-        return numNums;
+        return numNums >= numTarget ? numTarget : numNums;
     }
 }
