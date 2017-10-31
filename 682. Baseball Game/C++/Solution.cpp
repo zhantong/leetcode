@@ -14,10 +14,6 @@ public:
                 history.push_back(stoi(op));
             }
         }
-        int result = 0;
-        for (auto item : history) {
-            result += item;
-        }
-        return result;
+        return accumulate(history.begin(), history.end(), 0);
     }
 };
