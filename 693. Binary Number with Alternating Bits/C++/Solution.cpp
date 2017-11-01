@@ -1,15 +1,11 @@
 class Solution {
 public:
     bool hasAlternatingBits(int n) {
-        bool isPrevZero = (n & 1) == 0;
-        long current = 2;
-        while (current <= n) {
-            if (isPrevZero == ((n & current) == 0)) {
-                return false;
-            }
-            isPrevZero = !isPrevZero;
-            current <<= 1;
+        bool last = n & 1;
+        while (n != 0 && (n & 1) == last) {
+            last = 1 - last;
+            n >>= 1;
         }
-        return true;
+        return n == 0;
     }
 };
