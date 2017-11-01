@@ -1,10 +1,18 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+
 class Solution:
     def averageOfLevels(self, root):
         """
         :type root: TreeNode
         :rtype: List[float]
         """
-        if not root:
+        if root is None:
             return []
         queue = collections.deque()
         result = []
@@ -19,6 +27,6 @@ class Solution:
                     queue.append(current.left)
                 if current.right:
                     queue.append(current.right)
-            if count_current_level:
+            if count_current_level != 0:
                 result.append(sum_current_level / count_current_level)
         return result
