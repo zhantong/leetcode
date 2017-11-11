@@ -1,18 +1,15 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        map<char, int> has;
+        vector<int> has(26, 0);
         for (char item : magazine) {
-            if (has.find(item) == has.end()) {
-                has[item] = 0;
-            }
-            has[item]++;
+            has[item - 'a']++;
         }
         for (char item : ransomNote) {
-            if (has.find(item) == has.end() || has[item] == 0) {
+            if (has[item - 'a'] == 0) {
                 return false;
             }
-            has[item]--;
+            has[item - 'a']--;
         }
         return true;
     }
