@@ -19,7 +19,7 @@ public class Solution {
             } else {
                 TreeNode node = stack.pop();
                 if (prev != null) {
-                    result = Math.min(result, Math.abs(node.val - prev));
+                    result = Math.min(result, node.val - prev);
                 }
                 prev = node.val;
                 root = node.right;

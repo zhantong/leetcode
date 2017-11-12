@@ -22,7 +22,7 @@ public:
                 TreeNode *node = sta.top();
                 sta.pop();
                 if (hasPrev) {
-                    result = min(result, abs(node->val - prev));
+                    result = min(result, node->val - prev);
                 }
                 prev = node->val;
                 hasPrev = true;
