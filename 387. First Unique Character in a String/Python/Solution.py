@@ -1,15 +1,13 @@
-class Solution(object):
+class Solution:
     def firstUniqChar(self, s):
         """
         :type s: str
         :rtype: int
         """
-        count_dict = {}
+        counts = [0] * 26
         for item in s:
-            if item not in count_dict:
-                count_dict[item] = 0
-            count_dict[item] += 1
+            counts[ord(item) - ord('a')] += 1
         for (index, item) in enumerate(s):
-            if count_dict[item] == 1:
+            if counts[ord(item) - ord('a')] == 1:
                 return index
         return -1

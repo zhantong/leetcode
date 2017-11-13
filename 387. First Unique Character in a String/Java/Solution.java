@@ -1,15 +1,12 @@
 public class Solution {
     public int firstUniqChar(String s) {
-        Map<Character, Integer> countMap = new HashMap<>();
+        int[] counts = new int[26];
         for (char item : s.toCharArray()) {
-            if (!countMap.containsKey(item)) {
-                countMap.put(item, 0);
-            }
-            countMap.put(item, countMap.get(item) + 1);
+            counts[item - 'a']++;
         }
         int index = 0;
         for (char item : s.toCharArray()) {
-            if (countMap.get(item) == 1) {
+            if (counts[item - 'a'] == 1) {
                 return index;
             }
             index++;

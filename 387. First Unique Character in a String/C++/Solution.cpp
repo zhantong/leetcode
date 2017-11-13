@@ -1,19 +1,14 @@
 class Solution {
 public:
     int firstUniqChar(string s) {
-        map<char, int> countMap;
-        for (char item : s) {
-            if (countMap.find(item) == countMap.end()) {
-                countMap[item] = 0;
-            }
-            countMap[item]++;
+        vector<int> counts(26, 0);
+        for (auto item : s) {
+            counts[item - 'a']++;
         }
-        int index = 0;
-        for (char item : s) {
-            if (countMap[item] == 1) {
-                return index;
+        for (int i = 0; i < s.size(); i++) {
+            if (counts[s[i] - 'a'] == 1) {
+                return i;
             }
-            index++;
         }
         return -1;
     }
