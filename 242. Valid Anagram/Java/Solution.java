@@ -3,21 +3,15 @@ public class Solution {
         if (s.length() != t.length()) {
             return false;
         }
-        Map<Character, Integer> check = new HashMap<>();
+        int[] counts = new int[26];
         for (char item : s.toCharArray()) {
-            if (!check.containsKey(item)) {
-                check.put(item, 0);
-            }
-            check.put(item, check.get(item) + 1);
+            counts[item - 'a']++;
         }
         for (char item : t.toCharArray()) {
-            if (!check.containsKey(item)) {
-                return false;
-            }
-            check.put(item, check.get(item) - 1);
+            counts[item - 'a']--;
         }
-        for (int item : check.values()) {
-            if (item != 0) {
+        for (int count : counts) {
+            if (count != 0) {
                 return false;
             }
         }

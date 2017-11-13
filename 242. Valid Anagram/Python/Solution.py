@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def isAnagram(self, s, t):
         """
         :type s: str
@@ -7,16 +7,9 @@ class Solution(object):
         """
         if len(s) != len(t):
             return False
-        checkDict = {}
+        counts = [0] * 26
         for item in s:
-            if item not in checkDict:
-                checkDict[item] = 0
-            checkDict[item] += 1
+            counts[ord(item) - ord('a')] += 1
         for item in t:
-            if item not in checkDict:
-                return False
-            checkDict[item] -= 1
-        for value in checkDict.values():
-            if value != 0:
-                return False
-        return True
+            counts[ord(item) - ord('a')] -= 1
+        return all(count == 0 for count in counts)

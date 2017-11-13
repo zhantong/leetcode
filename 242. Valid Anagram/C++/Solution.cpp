@@ -4,21 +4,15 @@ public:
         if (s.length() != t.length()) {
             return false;
         }
-        map<char, int> check;
-        for (char item : s) {
-            if (check.find(item) == check.end()) {
-                check[item] = 0;
-            }
-            check[item]++;
+        vector<int> counts(26, 0);
+        for (auto item : s) {
+            counts[item - 'a']++;
         }
         for (char item : t) {
-            if (check.find(item) == check.end()) {
-                return false;
-            }
-            check[item]--;
+            counts[item - 'a']--;
         }
-        for (auto &item : check) {
-            if (item.second != 0) {
+        for (auto count : counts) {
+            if (count != 0) {
                 return false;
             }
         }
