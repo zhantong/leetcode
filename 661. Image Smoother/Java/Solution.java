@@ -1,8 +1,5 @@
 class Solution {
     public int[][] imageSmoother(int[][] M) {
-        if (M.length == 0) {
-            return M;
-        }
         int m = M.length;
         int n = M[0].length;
         int[][] result = new int[m][n];

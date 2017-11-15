@@ -1,9 +1,6 @@
 class Solution {
 public:
     vector<vector<int>> imageSmoother(vector<vector<int>> &M) {
-        if (M.empty()) {
-            return M;
-        }
         int m = M.size();
         int n = M[0].size();
         vector<vector<int>> result(m, vector<int>(n));

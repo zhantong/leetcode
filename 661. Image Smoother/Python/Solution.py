@@ -4,8 +4,6 @@ class Solution:
         :type M: List[List[int]]
         :rtype: List[List[int]]
         """
-        if not M:
-            return M
         m = len(M)
         n = len(M[0])
         result = [[0] * n for _ in range(m)]
