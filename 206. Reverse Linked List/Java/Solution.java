@@ -8,17 +8,16 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        if (head == null || head.next == null) {
+        if (head == null) {
             return head;
         }
-        ListNode back = null;
-        ListNode old_head = null;
-        while (head != null) {
-            old_head = head;
-            head = head.next;
-            old_head.next = back;
-            back = old_head;
+        ListNode newHead = head;
+        while (head.next != null) {
+            ListNode current = head.next;
+            head.next = head.next.next;
+            current.next = newHead;
+            newHead = current;
         }
-        return old_head;
+        return newHead;
     }
 }
