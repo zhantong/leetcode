@@ -1,13 +1,12 @@
-class Solution(object):
+class Solution:
     def containsDuplicate(self, nums):
         """
         :type nums: List[int]
         :rtype: bool
         """
-        contains = {}
+        contains = set()
         for num in nums:
-            if num not in contains:
-                contains[num] = 1
-            else:
+            if num in contains:
                 return True
+            contains.add(num)
         return False
