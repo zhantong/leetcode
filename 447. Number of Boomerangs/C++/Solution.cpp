@@ -7,9 +7,6 @@ public:
             for (auto &pointB : points) {
                 int distance = (pointA.first - pointB.first) * (pointA.first - pointB.first) +
                                (pointA.second - pointB.second) * (pointA.second - pointB.second);
-                if (distances.find(distance) == distances.end()) {
-                    distances[distance] = 0;
-                }
                 distances[distance]++;
             }
             for (auto &item : distances) {

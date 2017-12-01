@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def numberOfBoomerangs(self, points):
         """
         :type points: List[List[int]]
@@ -9,9 +9,6 @@ class Solution(object):
             distances = {}
             for point_b in points:
                 distance = (point_a[0] - point_b[0]) ** 2 + (point_a[1] - point_b[1]) ** 2
-                if distance not in distances:
-                    distances[distance] = 0
-                distances[distance] += 1
-            for item in distances.values():
-                result += item * (item - 1)
+                distances[distance] = distances.get(distance, 0) + 1
+            result += sum(item * (item - 1) for item in distances.values())
         return result
