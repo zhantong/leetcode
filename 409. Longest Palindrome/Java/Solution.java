@@ -9,9 +9,7 @@ public class Solution {
         for (int item : countArray) {
             pair += item / 2;
             if (!isOddExists) {
-                if (item % 2 != 0) {
-                    isOddExists = true;
-                }
+                isOddExists = item % 2 != 0;
             }
         }
         return pair * 2 + (isOddExists ? 1 : 0);
