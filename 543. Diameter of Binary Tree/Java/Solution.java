@@ -23,11 +23,8 @@ public class Solution {
                 return Math.max(left, right) + 1;
             }
         }
-        if (root == null) {
-            return 0;
-        }
         Utils utils = new Utils();
         utils.diameter(root);
-        return utils.result - 1;
+        return utils.result == -1 ? 0 : utils.result - 1;
     }
 }

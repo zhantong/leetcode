@@ -25,11 +25,8 @@ public:
                 return max(left, right) + 1;
             }
         };
-        if (root == nullptr) {
-            return 0;
-        }
         Utils utils;
         utils.diameter(root);
-        return utils.result - 1;
+        return utils.result == -1 ? 0 : utils.result - 1;
     }
 };
