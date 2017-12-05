@@ -21,9 +21,6 @@ public class Solution {
                 return node;
             }
         }
-        if (nums.length == 0) {
-            return null;
-        }
         Utils utils = new Utils();
         return utils.toBST(nums, 0, nums.length - 1);
     }

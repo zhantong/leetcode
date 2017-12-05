@@ -23,9 +23,6 @@ public:
                 return node;
             }
         };
-        if (nums.size() == 0) {
-            return nullptr;
-        }
         Utils utils;
         return utils.toBST(nums, 0, nums.size() - 1);
     }
