@@ -4,7 +4,7 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        if not nums:
+        if len(nums) == 0:
             return 0
         count = 1
         result = 1
