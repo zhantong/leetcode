@@ -6,16 +6,14 @@ public:
         string result = "";
         int carry = 0;
         while (i >= 0 || j >= 0) {
-            int plus = 0;
             if (i >= 0) {
-                plus += num1[i] - '0';
+                carry += num1[i] - '0';
             }
             if (j >= 0) {
-                plus += num2[j] - '0';
+                carry += num2[j] - '0';
             }
-            plus += carry;
-            result += (char)(plus % 10 + '0');
-            carry = plus / 10;
+            result += (char)(carry % 10 + '0');
+            carry /= 10;
             i--;
             j--;
         }

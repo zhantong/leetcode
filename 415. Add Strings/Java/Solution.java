@@ -5,16 +5,14 @@ public class Solution {
         StringBuilder builder = new StringBuilder();
         int carry = 0;
         while (i >= 0 || j >= 0) {
-            int plus = 0;
             if (i >= 0) {
-                plus += num1.charAt(i) - '0';
+                carry += num1.charAt(i) - '0';
             }
             if (j >= 0) {
-                plus += num2.charAt(j) - '0';
+                carry += num2.charAt(j) - '0';
             }
-            plus += carry;
-            builder.append((char)(plus % 10 + '0'));
-            carry = plus / 10;
+            builder.append((char)(carry % 10 + '0'));
+            carry /= 10;
             i--;
             j--;
         }

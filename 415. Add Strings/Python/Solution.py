@@ -10,16 +10,14 @@ class Solution(object):
         result = ''
         carry = 0
         while i >= 0 or j >= 0:
-            plus = 0
             if i >= 0:
-                plus += ord(num1[i]) - ord('0')
+                carry += ord(num1[i]) - ord('0')
             if j >= 0:
-                plus += ord(num2[j]) - ord('0')
-            plus += carry
-            result += chr(plus % 10 + ord('0'))
-            carry = plus // 10
+                carry += ord(num2[j]) - ord('0')
+            result += chr(carry % 10 + ord('0'))
+            carry //= 10
             i -= 1
             j -= 1
-        if carry:
+        if carry == 1:
             result += '1'
         return result[::-1]
