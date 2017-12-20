@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def licenseKeyFormatting(self, S, K):
         """
         :type S: str
@@ -14,6 +14,6 @@ class Solution(object):
                 if count_k == K:
                     result += '-'
                     count_k = 0
-        if result and result[-1] == '-':
+        if len(result) != 0 and result[-1] == '-':
             result = result[:-1]
         return result[::-1]
