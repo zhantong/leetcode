@@ -21,7 +21,7 @@ public:
             l2 = temp;
         }
         ListNode *p = l1;
-        while (p) {
+        while (p != nullptr) {
             while (l2 != nullptr && (p->next == nullptr || l2->val < p->next->val)) {
                 ListNode *temp = l2;
                 l2 = l2->next;
