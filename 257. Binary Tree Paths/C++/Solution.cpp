@@ -16,16 +16,16 @@ public:
                 if (root->left == nullptr && root->right == nullptr) {
                     result.push_back(path + to_string(root->val));
                 }
-                if (root->left) {
+                if (root->left != nullptr) {
                     paths(root->left, path + to_string(root->val) + "->", result);
                 }
-                if (root->right) {
+                if (root->right != nullptr) {
                     paths(root->right, path + to_string(root->val) + "->", result);
                 }
             }
         };
         vector<string> result;
-        if (root) {
+        if (root != nullptr) {
             Utils utils;
             utils.paths(root, "", result);
         }
